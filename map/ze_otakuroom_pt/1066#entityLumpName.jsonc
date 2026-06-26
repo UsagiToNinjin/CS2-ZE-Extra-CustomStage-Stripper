@@ -1,0 +1,341 @@
+// stripper by 兎RB 26.05.22
+// map ze_otakuroom_pt
+// workshop id 3128321209
+//⠀⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⢀⢠⡀⠐⠂⠀⠀⠒⠒⠒⠠⠀⠠⠤⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+//⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⣠⠐⠌⠋⠑⣂⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+//⡄⠀⠀⠀⣰⡆⠀⠀⠀⠀⣠⠕⠏⠀⠀⠀⠀⠀⠀⠈⠉⠙⠲⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠐⠀⡀⠀⠀⠀⠀⠀⠀
+//⠅⠀⠀⠐⠀⠇⠀⠀⢀⠞⠁⡠⠄⢀⠄⣀⣠⣤⣶⣶⣶⣾⣿⣿⣷⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢄⠀⠀⠀⠀
+//⠸⠀⠀⠀⠀⡀⠀⠐⠁⢠⠞⡁⣠⣶⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⠿⠷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢄⠀⠀⠀
+// ⣆⢀⠀⢀⠀⠂⠀⢰⣯⣴⣿⣿⣿⣿⠿⠛⣉⠁⠀⢂⠀⠀⠀⠈⠃⠀⠈⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⡀⠀
+//  ⠊⠳⣢⠁⠀⢠⣿⣿⣿⣿⠟⠉⠂⠀⠀⠠⠂⠀⠀⢂⠀⠀⠀⠀⠈⠂⠀⠱⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣀⠀⠀
+//  ⠀⣰⠃⠀⠀⣾⣿⡿⢋⢿⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⢢⠀⠀⠀⠀⠀⠐⠀⠘⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠐⣂⠀
+//  ⢤⠍⠀⠀⢰⣿⡟⠀⠸⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣆⠀⠀⠀⠀⠀⠈⢀⠈⠄⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⢂
+//⠀⠁⡾⠢⠀⠀⣼⢇⠁⠀⠀⠘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠋⡀⠀⠀⠀⠀⠀⠂⠘⡀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀
+//⢀⣸⡓⠀⠀⢀⡧⠈⠀⠀⠀⡄⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠈⠁⠀⢀⣀⣀⠀⠀⠰⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀⠀
+//⣵⣟⠄⠀⠀⢸⡁⠂⠀⠀⠀⢀⠠⠀⠁⠀⠀⠀⠀⠀⠐⠀⠀⠐⠃⠉⠀⠀⢄⠀⠀⠀⠀⠉⣥⠀⠀⠀⢀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀
+//⡧⣃⠈⠀⠰⢸⠁⠀⠀⠀⠘⠀⠂⠂⠠⠀⠀⠀⠀⠀⠀⠆⠀⠀⠀⠀⠀⠀⠀⠑⢄⠀⠀⠀⠊⡄⠀⠀⠈⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀
+//⡼⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠌⠄⠀⠀⠀⠀⠀⠀⢰⠀⠀⢰⠀⠀⠀⠀⠀⠀⠀⠀⣐⠄⢱⠀⠀⠀⠀⠀⠀⠀⠈⠄⠀⠀⠀⠀⠀
+//⣏⠄⡇⠀⠀⠀⠀⠀⠀⢀⠔⠎⠀⡈⡌⠄⠀⠀⠀⠀⠆⢸⡄⡅⠸⠠⠔⡀⢅⣰⣤⣤⣾⣿⣷⣾⣤⢤⠀⠀⠀⠀⠀⢸⡀⠀⠀⠀⠀⠀
+//⠃⢀⠇⠀⠰⢠⡀⠀⠔⠁⠈⢠⠀⠠⠀⢊⠀⠀⠀⠀⠀⢸⠀⢀⠀⠐⡨⣶⢿⢿⣿⣿⣿⣿⣿⢻⡇⠀⠂⠄⠠⡀⣀⣸⡙⡀⠀⠀⠀⠀
+//⠉⡯⠀⠀⠀⠸⠁⠂⠀⠀⠀⡘⠤⠀⢆⠀⠱⡠⡀⠀⡀⠘⢠⠸⠄⠈⠊⠉⠀⠸⣽⣿⣿⣿⡿⠈⠇⠀⢈⠀⠀⠀⠀⠘⢇⠀⠀⠀⠀⠀
+//⠀⠀⠄⠀⠀⠀⡒⠠⠀⠀⠀⢀⠏⣀⠘⡂⠀⠈⠈⠦⠳⠸⠸⡤⠀⠀⠀⠀⠀⠀⠛⠛⠉⠉⠁⠀⠀⠀⠄⠀⠀⠀⠈⡜⠜⠀⠀⠀⠀⠀
+// ⢱⠡⠀⠀⠐⠐⠀⠄⠀⠀⠀⣠⣲⣦⡶⣶⡒⠀⢀⠬⠃⠈⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠑⠀⠈⠀⡄⠀⠀⠀⡀⢆⠀⢀⠀⠀⠀⠀⠀
+// ⢿⠐⠆⠀⡈⣁⠐⡐⠀⠀⣴⡾⠿⣷⣿⣿⣷⠇⠁⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠠⢁⣒⠁⠀⠀⢀⠠⠈⢀⡌⠀⠀⠀⠀⠀
+//⠀⠼⡆⠓⠄⠐⡀⠀⠐⡨⢟⣟⠖⡃⠘⢿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢑⠗⡂⠀⠀⠀⠌⠆⠑⢹⠐⠀⡄⠀⠀⠰
+//⠀⠀⡲⠈⢉⢀⠀⢍⡆⠘⢔⣿⢮⡁⠂⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠜⠡⠀⠀⠀⡀⠼⡈⠀⢸⠀⠀⡇⠀⠀⠀
+// ⠀⠆⠆⠀⠦⡀⠀⠈⢑⣦⠲⡉⡳⡀⠀⠄⠀⠀⠀⠀⠀⠰⠿⠗⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠂⠀⠀⠄⡬⢲⠦⠀⡌⢰⡄⢇⠀⠀⠆
+//  ⢱⣄⣀⠨⠐⠀⢀⣀⠙⣂⠉⢰⢖⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡂⡊⠀⡠⠂⠊⠑⠈⠐⠢⠱⡪⢂⠸⠀⠀⢠
+//    ⣆⢤⡮⠋⠔⠁⠀⠈⠤⠀⢊⠈⠢⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠄⠀⣐⡙⠠⢪⠃⠀⠊⠀⠀⠀⠀⠀⢰⣕⡀⠀⠀⢠
+//    ⡭⠋⠴⢁⠈⠘⠀⡀⠈⢖⠀⢢⠀⠀⢫⠀⠒⠀⢠⠄⠀⢀⢠⣴⢞⣡⣴⣶⣓⠀⢀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⡜⡍⠄⢠⢸
+//⠰⣄⢇⢟⠑⠃⢀⠀⠈⠐⠀⠀⠀⢀⠋⡼⠀⠨⢹⠂⠀⠠⠁⠄⠀⠀⢪⣿⣿⣿⣿⡑⠁⠀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⡘⢊⢸⡞
+//⠀⣻⡂⡀⠄⠀⠀⠈⠀⠀⠀⠠⠀⠀⠈⠣⠾⢣⡀⠉⠄⠀⠀⠁⡄⠀⠀⠸⡟⣫⠂⢀⢔⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠽⠺⣇
+//⡄⢱⣧⠰⠌⣠⠀⠀⠠⠀⠃⠀⠀⢀⠀⠑⠀⠤⡃⡲⡒⠒⢀⣶⠞⠉⢁⡀⠱⣱⣞⠑⣻⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠳⣿
+//⠘⡼⣵⡄⠾⠟⠊⠁⠀⠀⠀⠀⠀⠀⠀⠁⢡⢡⠷⢞⣳⢀⣿⠛⠤⠀⡀⡠⠎⠝⠉⣼⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⣇
+//⠈⠱⡀⠒⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠄⠀⠙⠡⠘⠻⠀⠀⠀⠉⠀⠈⠀⠀⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢙
+//⠀⠡⢱⣀⢡⡀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠶⠀⠀⠀⠀⠀⠸⡧⠇⠀⠀⠀⠀⠀⠀⢠⣿⣃⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+//⠀⠀⢿⢣⠠⢐⠀⠀⠀⠀⠈⡀⠀⠀⠐⠀⠀⠀⠀⠀⠀⢻⡶⢅⠄⠀⠀⠀⠀⠀⠘⡃⠀⠀⠀⠀⠀⠁⠂⠄⡀⠀⠀⠀⠀⠀⡀⠀⠀⠀
+//⠀⠀⢸⢌⠁⢇⠀⡀⠄⠐⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⢠⠡⢁⡀⡘⠀⠀⡀⠀⢀⠵⠪⠁⠀⠀⠉⠀⠀⠀⠐⠈⠐⠄⠀⠀⡐⠀⠀⠀⠀
+//⠀⢀⣾⢄⠀⠀⠑⠌⠀⠀⠀⠐⠁⠀⠀⠀⠀⠀⠀⠀⡄⡩⢈⠊⢢⡀⠐⠁⠠⠁⠠⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠈⠘⢅⠀⠀⠀⠀
+//⠀⢨⠏⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠣⡁⡀⢀⠀⢄⡖⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠄⠀⠀⠢⠀⠀
+//⠀⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⡇⠈⠃⠡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⢀⠀⠁⠐⢀⠀⠁
+//⠀⠀⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠆⡄⠠⡀⠀⠀⠁⠠⠀⢀⠀⠠⠀⠀⠐⠁⠀⠁⠀⠀⠀⠀⠀⠀⠀⠂
+//⠀⠀⠀⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠅⠀⠀⠀⢈⢀⠄⠔⠠⠀⠐⠀⠈⠀⠀⠈⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡄⠀⠐
+//⠀⠀⠀⠘⡼⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡂⠀⠀⠰⠻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠀⠀⠀⠀⠀⠀⠀⠀⠀⡚⠀⠀⠀
+//⠀⠀⠀⠀⢠⠹⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠁⢨⠂⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠐⠀⠀⠀⠀
+//⠀⠀⠀⠀⠀⡇⠄⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⡀⠀⠈⠀⠀⠛⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⢀⠁⠀⠀⠀⠀
+//⠀⠀⠀⠀⠀⣿⠴⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠌⠀⠀⢠⡄⠀⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠄⠀⠀⠀⠀⢀
+//⠀⠀⠀⠐⢀⠉⠗⡃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠁⠀⠀⠀⠌⠀⠀⠘⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠐⠀⠀⠀⠀⠔⠁
+//⠀⠀⠀⠀⠆⡀⢀⢚⡄⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠀⠀⠀⠀⠀⠠⠀⠀⠀⠀⠂⠢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠁⠀⠀⠀⠌⠁⠘
+//⠀⠀⠀⢠⣸⠃⡸⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⢠⠀⠡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠐⡀⢀⠖⠀⠀⠀
+//⠀⠀⠀⠈⠹⠀⠀⠀⠀⢃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠁⠀⠀⣠⣇⠠⠀⠂⠉
+//⠀⠀⠀⠀⡀⠀⡅⡆⠀⠀⢂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⡀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠁⠀⢀⠔⠁⠀⠀⠀⠀⠀
+//⠀⠀⠀⢰⠁⠀⢣⠃⠀⠀⠀⢂⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⡀⠀⠀⠀⠈⡀⠀⠀⠀⠀⠀⢀⠂⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀
+//⠀⠀⠀⠠⠀⠀⠓⠔⡀⠀⠀⠀⢂⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡀⠀⠀⠀⡐⠂⠀⣠⠞⠦⠀⢀⠀⠀⠀⠀⠀⠀
+//⠀⠀⠀⠀⠀⡰⠐⢱⡀⠄⢀⠀⠀⢂⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠐⠀⠀⠀⢀⠞⠁⠀⠀⠀⠀⠀⠁⠀⠂⠀⠄
+//⠀⠀⠀⠀⠀⡧⠄⠡⢖⠐⡀⠀⡀⠀⠄⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠈⢀⠔⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+//⠀⠀⠀⠀⠃⠃⠢⠀⠩⢆⠀⠄⠚⢤⣈⡄⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⣠⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+{
+    "modify": // add random number to targetname
+    [
+        {
+            "match":
+            {
+                "targetname": "[PR#]lv3_laser_high_hurt"
+            },
+            "replace":
+            {
+                "targetname": "lv3_laser_high_hurt&0000",
+                "parentname": "lv3_laser_high&0000"
+            }
+        },
+
+        {
+            "match":
+            {
+                "targetname": "[PR#]lv3_laser_relay3"
+            },
+            "replace":
+            {
+                "targetname": "lv3_laser_relay3&0000"
+            },
+            "delete":
+            {
+                "io":
+                [
+                    {
+                        "outputname": "OnSpawn",
+                        "targetname": "[PR#]lv3_laser_high",
+                        "inputname": "Open",
+                        "delay": 0.01,
+                        "timestofire": -1
+                    }
+                ]
+            },        		
+            "insert":
+            {
+                "io":
+                [
+                    {
+                        "outputname": "OnSpawn",
+                        "targetname": "lv3_laser_high&0000",
+                        "inputname": "Open",
+                        "delay": 0.01,
+                        "timestofire": -1
+                    }
+                ]
+            }
+        },
+
+        {
+            "match":
+            {
+                "targetname": "[PR#]lv3_laser_high"
+            },
+            "replace":
+            {
+                "targetname": "lv3_laser_high&0000",
+                "parentname": "lv3_laser_high_wave&0000"
+            },
+            "delete":
+            {
+                "io":
+                [
+                    {
+                        "outputname": "OnFullyOpen",
+                        "targetname": "!self",
+                        "inputname": "Kill",
+                        "delay": 0.0,
+                        "timestofire": -1
+                    }
+                ]
+            },        		
+            "insert":
+            {
+                "io":
+                [
+                    {
+                        "outputname": "OnFullyOpen",
+                        "targetname": "!self",
+                        "inputname": "KillHierarchy",
+                        "delay": 0.0,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnFullyOpen",
+                        "targetname": "lv3_laser_ex_relay3&0000",
+                        "inputname": "Kill",
+                        "delay": 0.0,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnUser1",
+                        "targetname": "!self",
+                        "inputname": "Color",
+                        "overrideparam": "255 0 0",
+                        "delay": 0.0,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnUser1",
+                        "targetname": "!self",
+                        "inputname": "Color",
+                        "overrideparam": "255 128 0",
+                        "delay": 0.1,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnUser1",
+                        "targetname": "!self",
+                        "inputname": "Color",
+                        "overrideparam": "255 255 0",
+                        "delay": 0.2,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnUser1",
+                        "targetname": "!self",
+                        "inputname": "Color",
+                        "overrideparam": "128 255 0",
+                        "delay": 0.3,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnUser1",
+                        "targetname": "!self",
+                        "inputname": "Color",
+                        "overrideparam": "0 255 0",
+                        "delay": 0.4,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnUser1",
+                        "targetname": "!self",
+                        "inputname": "Color",
+                        "overrideparam": "0 255 128",
+                        "delay": 0.5,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnUser1",
+                        "targetname": "!self",
+                        "inputname": "Color",
+                        "overrideparam": "0 255 255",
+                        "delay": 0.6,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnUser1",
+                        "targetname": "!self",
+                        "inputname": "Color",
+                        "overrideparam": "0 128 255",
+                        "delay": 0.7,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnUser1",
+                        "targetname": "!self",
+                        "inputname": "Color",
+                        "overrideparam": "0 0 255",
+                        "delay": 0.8,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnUser1",
+                        "targetname": "!self",
+                        "inputname": "Color",
+                        "overrideparam": "128 0 255",
+                        "delay": 0.9,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnUser1",
+                        "targetname": "!self",
+                        "inputname": "Color",
+                        "overrideparam": "255 0 255",
+                        "delay": 1.0,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnUser1",
+                        "targetname": "!self",
+                        "inputname": "Color",
+                        "overrideparam": "255 0 128",
+                        "delay": 1.1,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnUser1",
+                        "targetname": "!self",
+                        "inputname": "FireUser1",
+                        "delay": 1.2,
+                        "timestofire": -1
+                    }
+                ]
+            }
+        }         
+    ],
+    "add": // stage hellz mode entities
+    [
+        {
+            "targetname": "lv3_laser_ex_relay3&0000",
+			"classname": "logic_relay",
+            "io":
+            [
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_laser_high&0000",
+                    "inputname": "FireUser1",
+                    "delay": 0.01,
+                    "timestofire": 1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_laser_high_wave&0000",
+                    "inputname": "Open",
+                    "delay": 0.01,
+                    "timestofire": 1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "!self",
+                    "inputname": "Kill",
+                    "delay": 0.05,
+                    "timestofire": 1
+                }
+            ]    
+        },
+
+        {
+            "targetname": "lv3_laser_high_wave&0000",
+			"classname": "func_movelinear",
+		    "origin": "-248 -272 52",
+			"angles": "0 0 0",
+			"scales": "1 1 1",
+            "fadescale": "1",
+            "blockdamage": "0",
+			"movedistance": "55",
+			"speed": "100",
+            "spawnflags": "8",
+			"movedir": "90 0 0",
+            "fademindist": "-1",
+			"rendercolor": "255 255 255",
+			"renderamt": "0",
+            "model": "maps/ze_otakuroom_pt/entities/lv3_laser_high_1051.vmdl",
+            "io":
+            [
+                {
+                    "outputname": "OnFullyOpen",
+                    "targetname": "!self",
+                    "inputname": "Close",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnFullyClosed",
+                    "targetname": "!self",
+                    "inputname": "Open",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]    
+        }
+    ]
+}
