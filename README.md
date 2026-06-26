@@ -1,2 +1,2 @@
-# CS2-ZE-Extra-CustomSstage-Stripper
+# CS2-ZE-Extra-CustomStage-Stripper
 Aa
