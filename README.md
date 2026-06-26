@@ -1,2 +1,2 @@
 # CS2-ZE-Extra-CustomStage-Stripper
-Aa
+These files are used to add custom levels to each map
