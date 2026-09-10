@@ -1,10 +1,10 @@
-// stripper by 兎RB 26.02.07
+// stripper by 兎RB 26.09.10
 // map ze_grau_p
 // workshop id 3246171131
 // this map includes custom BGM
 // you will need to place the BGM files in the appropriate directory within your server's asset(.vpk)
 // and also create and include a soundevents.vsndevt file
-// for the music file paths, please refer to L7669~7692
+// for the music file paths, please refer to L7662~7683
 {
     "modify": // add stage rtv extra
     [
@@ -103,14 +103,12 @@
             "origin": "-5744 -10776 -11200",
             "angles": "0 0 0",
             "scales": "1 1 1",
+            "startdisabled": "1",
             "filtername": "human",
             "spawnflags": "4097",
-            "startdisabled": "1",
             "model": "maps/ze_grau_p/entities/st3_boss_vida_counttrigger_1093.vmdl"
-        }
-    ],
-    "add": // stage rtv fys
-    [
+        },
+        // stage rtv fys
         {
             "targetname": "admin_rtv_fys",
             "classname": "func_button",
@@ -2053,10 +2051,8 @@
                     "timestofire": -1
                 }
             ]
-        }
-    ],
-    "add": // stage rtv a
-    [
+        },
+        // stage rtv a
         {
             "targetname": "admin_rtv_a",
             "classname": "func_button",
@@ -5033,10 +5029,8 @@
                     "timestofire": -1
                 }
             ]
-        }
-    ],
-    "add": // stage rtv z
-    [
+        },
+        // stage rtv z
         {
             "targetname": "admin_rtv_z",
             "classname": "func_button",
@@ -7664,10 +7658,8 @@
                     "timestofire": -1
                 }
             ]
-        }
-    ],
-    "add": // music
-    [
+        },
+        // music
         // stage rtv fys
         {
             "targetname": "rtv_fys_bgm",
