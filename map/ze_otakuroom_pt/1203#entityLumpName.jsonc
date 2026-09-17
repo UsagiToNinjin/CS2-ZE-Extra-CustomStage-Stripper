@@ -1,4 +1,4 @@
-// stripper by 兎RB 26.07.19
+// stripper by 兎RB 26.09.17
 // map ze_otakuroom_pt
 // workshop id 3128321209
 {
@@ -38,14 +38,6 @@
                     {
                         "outputname": "OnUser1",
                         "targetname": "lv3_ex_boss*",
-                        "inputname": "Kill",
-                        "delay": 0.0,
-                        "timestofire": -1
-                    },
-
-                    {
-                        "outputname": "OnUser1",
-                        "targetname": "zm_note*",
                         "inputname": "Kill",
                         "delay": 0.0,
                         "timestofire": -1
