@@ -59,6 +59,42 @@
                         "overrideparam": "1",
                         "delay": 0.0,
                         "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnPressed",
+                        "targetname": "map_brush",
+                        "inputname": "RunScriptInput",
+                        "overrideparam": "Skip_A",
+                        "delay": 0.0,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnPressed",
+                        "targetname": "map_brush",
+                        "inputname": "RunScriptInput",
+                        "overrideparam": "Skip_B",
+                        "delay": 0.0,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnPressed",
+                        "targetname": "map_brush",
+                        "inputname": "RunScriptInput",
+                        "overrideparam": "Skip_C",
+                        "delay": 0.0,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnPressed",
+                        "targetname": "map_brush",
+                        "inputname": "RunScriptInput",
+                        "overrideparam": "Skip_D",
+                        "delay": 0.0,
+                        "timestofire": -1
                     }
                 ]
             }
@@ -112,7 +148,7 @@
                 [
                     {
                         "outputname": "OnTrigger",
-                        "targetname": "win_d",
+                        "targetname": "escape_branch",
                         "inputname": "AddOutPut",
                         "overrideparam": "OnTrue>check_purple_d>SetValue>1>0.0>1",
                         "delay": 46.0,
@@ -121,27 +157,27 @@
 
                     {
                         "outputname": "OnTrigger",
-                        "targetname": "win_d",
+                        "targetname": "escape_branch",
                         "inputname": "AddOutPut",
-                        "overrideparam": "OnStartTouch>server>Command>say *** Enable Stage Purple D ***>0.0>1",
+                        "overrideparam": "OnTrue>server>Command>say *** Enable Stage Purple D ***>0.0>1",
                         "delay": 46.0,
                         "timestofire": -1
                     },
 
                     {
                         "outputname": "OnTrigger",
-                        "targetname": "win_d",
+                        "targetname": "escape_branch",
                         "inputname": "AddOutPut",
-                        "overrideparam": "OnStartTouch>server>Command>say *** Enable Stage Purple D ***>1.0>1",
+                        "overrideparam": "OnTrue>server>Command>say *** Enable Stage Purple D ***>1.0>1",
                         "delay": 46.0,
                         "timestofire": -1
                     },
 
                     {
                         "outputname": "OnTrigger",
-                        "targetname": "win_d",
+                        "targetname": "escape_branch",
                         "inputname": "AddOutPut",
-                        "overrideparam": "OnStartTouch>server>Command>say *** Enable Stage Purple D ***>2.0>1",
+                        "overrideparam": "OnTrue>server>Command>say *** Enable Stage Purple D ***>2.0>1",
                         "delay": 46.0,
                         "timestofire": -1
                     }
@@ -161,7 +197,7 @@
                 [
                     {
                         "outputname": "OnTrigger",
-                        "targetname": "win_d",
+                        "targetname": "escape_branch",
                         "inputname": "AddOutPut",
                         "overrideparam": "OnFalse>check_purple_d>SetValue>0>0.0>1",
                         "delay": 46.0,
