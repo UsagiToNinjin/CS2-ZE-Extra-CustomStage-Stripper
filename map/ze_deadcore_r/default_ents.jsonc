@@ -1,10 +1,29 @@
-// stripper by 兎RB 26.09.09
+// stripper by 兎RB 26.09.30
 // map ze_deadcore_r
 // workshop id 3331345627
 {
     "modify":
     [
-        // change to unlock
+        {
+            "match":
+            {
+                "classname": "logic_auto"
+            },
+            "insert":
+            {
+                "io":
+                [
+                    {
+                        "outputname": "OnMapSpawn",
+                        "targetname": "check_purple_d",
+                        "inputname": "Test",
+                        "delay": 2.0,
+                        "timestofire": 1
+                    }
+                ]
+            }
+        },
+
         {
             "match":
             {
@@ -14,14 +33,78 @@
             "replace":
             {
                 "spawnflags": "1057"
+            },
+            "delete":
+            {
+                "io":
+                [
+                    {
+                        "outputname": "OnPressed",
+                        "targetname": "[PR#]map_brush",
+                        "inputname": "RunScriptInput",
+                        "overrideparam": "[PR#]Reset",
+                        "delay": 0.0,
+                        "timestofire": -1
+                    }
+                ]
+            },
+            "insert":
+            {
+                "io":
+                [
+                    {
+                        "outputname": "OnPressed",
+                        "targetname": "check_purple_d",
+                        "inputname": "SetValue",
+                        "overrideparam": "1",
+                        "delay": 0.0,
+                        "timestofire": -1
+                    }
+                ]
             }
         },
-        // show chat log
+
+        {
+            "match":
+            {
+                "targetname": "[PR#]admin_reset",
+                "classname": "func_button"
+            },
+            "insert":
+            {
+                "io":
+                [
+                    {
+                        "outputname": "OnPressed",
+                        "targetname": "check_purple_d",
+                        "inputname": "SetValue",
+                        "overrideparam": "0",
+                        "delay": 0.0,
+                        "timestofire": -1
+                    }
+                ]
+            }
+        },
+
         {
             "match":
             {
                 "targetname": "[PR#]escape_red_relay",
                 "classname": "logic_relay"
+            },
+            "delete":
+            {
+                "io":
+                [
+                    {
+                        "outputname": "OnTrigger",
+                        "targetname": "[PR#]escape_branch",
+                        "inputname": "SetValue",
+                        "overrideparam": "0",
+                        "delay": 46.0,
+                        "timestofire": -1
+                    }
+                ]
             },
             "insert":
             {
@@ -31,8 +114,8 @@
                         "outputname": "OnTrigger",
                         "targetname": "win_d",
                         "inputname": "AddOutPut",
-                        "overrideparam": "OnStartTouch>server>Command>say *** Enable Stage Purple D ***>0.0>-1",
-                        "delay": 119.0,
+                        "overrideparam": "OnTrue>check_purple_d>SetValue>1>0.0>1",
+                        "delay": 46.0,
                         "timestofire": -1
                     },
 
@@ -40,8 +123,8 @@
                         "outputname": "OnTrigger",
                         "targetname": "win_d",
                         "inputname": "AddOutPut",
-                        "overrideparam": "OnStartTouch>server>Command>say *** Enable Stage Purple D ***>1.0>-1",
-                        "delay": 119.0,
+                        "overrideparam": "OnStartTouch>server>Command>say *** Enable Stage Purple D ***>0.0>1",
+                        "delay": 46.0,
                         "timestofire": -1
                     },
 
@@ -49,8 +132,17 @@
                         "outputname": "OnTrigger",
                         "targetname": "win_d",
                         "inputname": "AddOutPut",
-                        "overrideparam": "OnStartTouch>server>Command>say *** Enable Stage Purple D ***>2.0>-1",
-                        "delay": 119.0,
+                        "overrideparam": "OnStartTouch>server>Command>say *** Enable Stage Purple D ***>1.0>1",
+                        "delay": 46.0,
+                        "timestofire": -1
+                    },
+
+                    {
+                        "outputname": "OnTrigger",
+                        "targetname": "win_d",
+                        "inputname": "AddOutPut",
+                        "overrideparam": "OnStartTouch>server>Command>say *** Enable Stage Purple D ***>2.0>1",
+                        "delay": 46.0,
                         "timestofire": -1
                     }
                 ]

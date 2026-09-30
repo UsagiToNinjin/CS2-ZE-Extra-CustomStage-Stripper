@@ -1,19 +1,63 @@
-// stripper by 兎RB 26.09.09
+// stripper by 兎RB 26.09.30
 // map ze_deadcore_r
 // workshop id 3331345627
 {
-    "modify": // enable stage Purple D
+    "add":
     [
         {
-            "match":
-            {
-                "targetname": "[PR#]extra_counter",
-                "classname": "math_counter"
-            },
-            "replace":
-            {
-                "max": "3"
-            }
+            "targetname": "check_purple_d",
+            "classname": "logic_branch",
+            "initialvalue": "0",
+            "io":
+            [
+                {
+                    "outputname": "OnTrue",
+                    "targetname": "stage_a",
+                    "inputname": "Disable",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrue",
+                    "targetname": "stage_b",
+                    "inputname": "Disable",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrue",
+                    "targetname": "stage_c",
+                    "inputname": "Disable",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrue",
+                    "targetname": "stage_d_relay",
+                    "inputname": "Disable",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrue",
+                    "targetname": "stage_d_red_relay",
+                    "inputname": "Disable",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrue",
+                    "targetname": "stage_d_purple_relay",
+                    "inputname": "Trigger",
+                    "delay": 1.0,
+                    "timestofire": -1
+                }
+            ]
         }
-    ]
+    ]    
 }
