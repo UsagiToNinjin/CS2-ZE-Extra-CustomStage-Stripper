@@ -147,6 +147,28 @@
                     }
                 ]
             }        
+        },
+
+        {
+            "match":
+            {
+                "targetname": "[PR#]escape_purple_relay",
+                "classname": "logic_relay"
+            },
+            "insert":
+            {
+                "io":
+                [
+                    {
+                        "outputname": "OnTrigger",
+                        "targetname": "win_d",
+                        "inputname": "AddOutPut",
+                        "overrideparam": "OnFalse>check_purple_d>SetValue>0>0.0>1",
+                        "delay": 46.0,
+                        "timestofire": -1
+                    }
+                ]
+            }
         }
     ]
 }
