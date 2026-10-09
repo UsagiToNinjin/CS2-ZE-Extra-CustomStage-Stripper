@@ -1,4 +1,4 @@
-// stripper by 兎RB 26.09.16
+// stripper by 兎RB 26.10.09
 // map ze_otakuroom_pt
 // workshop id 3128321209
 //⠀⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⢀⢠⡀⠐⠂⠀⠀⠒⠒⠒⠠⠀⠠⠤⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -137,6 +137,15 @@
 					    "outputname": "OnNewGame",
 					    "targetname": "player",
 					    "inputname": "ClearContext",
+					    "delay": 0.05,
+					    "timestofire": -1
+				    },
+
+                    {
+					    "outputname": "OnNewGame",
+					    "targetname": "player",
+					    "inputname": "KeyValue",
+                        "overrideparam": "movetype 2",
 					    "delay": 0.05,
 					    "timestofire": -1
 				    },
@@ -384,18 +393,6 @@
                 ]
             }
         },
-        // add targetname
-        {
-            "match":
-            {
-                "classname": "post_processing_volume",
-                "hammeruniqueid": "1497"
-            },
-            "insert":
-            {
-                "targetname": "cc"
-            }
-        },
         // change spawnflags 2 to 0, add stage hellz entities
         // 1064#entityLumpName
         {
@@ -516,24 +513,49 @@
                 "template10": "lv3_ex_boss_bomb_ptc2",
                 "template11": "lv3_ex_boss_bomb_hurt",
                 "template12": "lv3_ex_boss_dice_relay",
-                "template13": "lv3_ex_boss_dice_prop1",
-                "template14": "lv3_ex_boss_dice_prop2",
-                "template15": "lv3_ex_boss_dice_prop3",
-                "template16": "lv3_ex_boss_dice_move",
-                "template17": "lv3_ex_boss_dice_hurt",
-                "template18": "lv3_ex_boss_dice_choose",
-                "template19": "lv3_ex_boss_dice_speed",
-                "template20": "lv3_ex_boss_square_relay",
-                "template21": "lv3_ex_boss_square_rot",
-                "template22": "lv3_ex_boss_square_laser1",
-                "template23": "lv3_ex_boss_square_laser2",
-                "template24": "lv3_ex_boss_square_laser3",
-                "template25": "lv3_ex_boss_square_laser4",
-                "template26": "lv3_ex_boss_square_move1",
-                "template27": "lv3_ex_boss_square_move2",
-                "template28": "lv3_ex_boss_square_move3",
-                "template29": "lv3_ex_boss_square_move4",
-                "template30": "lv3_ex_boss_square_light"
+                "template13": "lv3_ex_boss_dice_prop",
+                "template14": "lv3_ex_boss_dice_move",
+                "template15": "lv3_ex_boss_dice_hurt",
+                "template16": "lv3_ex_boss_dice_speed",
+                "template17": "lv3_ex_boss_square_relay",
+                "template18": "lv3_ex_boss_square_rot",
+                "template19": "lv3_ex_boss_square_laser1",
+                "template20": "lv3_ex_boss_square_laser2",
+                "template21": "lv3_ex_boss_square_laser3",
+                "template22": "lv3_ex_boss_square_laser4",
+                "template23": "lv3_ex_boss_square_move1",
+                "template24": "lv3_ex_boss_square_move2",
+                "template25": "lv3_ex_boss_square_move3",
+                "template26": "lv3_ex_boss_square_move4",
+                "template27": "lv3_ex_boss_square_light",
+                "template28": "lv3_ex_boss_web_relay",
+                "template29": "lv3_ex_boss_web_move1",
+                "template30": "lv3_ex_boss_web_move2",
+                "template31": "lv3_ex_boss_web_move3",
+                "template32": "lv3_ex_boss_web_point",
+                "template33": "lv3_ex_boss_web_rot",
+                "template34": "lv3_ex_boss_web_color",
+                "template35": "lv3_ex_boss_hell_ptc",
+                "template36": "lv3_ex_boss_hell_move1",
+                "template37": "lv3_ex_boss_hell_move2",
+                "template38": "lv3_ex_boss_hell_move3",
+                "template39": "lv3_ex_boss_hell_move4",
+                "template40": "lv3_ex_boss_hell_move5",
+                "template41": "lv3_ex_boss_hell_move6",
+                "template42": "lv3_ex_boss_hell_move7",
+                "template43": "lv3_ex_boss_hell_move8",
+                "template44": "lv3_ex_boss_hell_move9",
+                "template45": "lv3_ex_boss_hell_move10",
+                "template46": "lv3_ex_boss_hell_move11",
+                "template47": "lv3_ex_boss_hell_move12",
+                "template48": "lv3_ex_boss_hell_move13",
+                "template49": "lv3_ex_boss_hell_move14",
+                "template50": "lv3_ex_boss_hell_move15",
+                "template51": "lv3_ex_boss_hell_move16",
+                "template52": "lv3_ex_boss_hell_move17",
+                "template53": "lv3_ex_boss_hell_move18",
+                "template54": "lv3_ex_boss_hell_trigger",
+                "template55": "lv3_ex_boss_hell_fade"
             }
         },
         // change point_template to env_entity_maker
@@ -666,11 +688,11 @@
         {
 			"targetname": "level_case",
             "classname": "logic_case",
-            "case01": "1", // stage 1
-            "case02": "2", // stage 2
-            "case03": "3", // stage 3
-            "case04": "4", // stage 3 hellz
-            "case05": "5", // stage zm
+            "case01": "1.0", // stage 1
+            "case02": "2.0", // stage 2
+            "case03": "3.0", // stage 3
+            "case04": "4.0", // stage 3 hellz
+            "case05": "5.0", // stage zm
 			"io":
             [
                 {
@@ -1088,22 +1110,6 @@
                 {
                     "outputname": "OnTrigger",
                     "targetname": "lv1*",
-                    "inputname": "Kill",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnTrigger",
-                    "targetname": "Map_Item_Icarus_Des_Lv3",
-                    "inputname": "Teleport",
-                    "delay": 1.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnTrigger",
-                    "targetname": "cc",
                     "inputname": "Kill",
                     "delay": 0.0,
                     "timestofire": -1
@@ -1740,6 +1746,22 @@
                     "inputname": "ForceSpawn",
                     "delay": 0.0,
                     "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase09",
+                    "targetname": "lv3_laser_maker1",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase09",
+                    "targetname": "lv3_laser_maker3",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
                 }
             ]
         },
@@ -1951,7 +1973,7 @@
                 {
                     "outputname": "OnFullyOpen",
                     "targetname": "lv3_ex_icarus_attack_trigger",
-                    "inputname": "Enable",
+                    "inputname": "CountPlayersInZone",
                     "delay": 1.0,
                     "timestofire": -1
                 },
@@ -2107,26 +2129,15 @@
 
         {
 			"targetname": "lv3_ex_icarus_attack_trigger",
-            "classname": "trigger_multiple",
+            "classname": "game_zone_player",
             "origin": "0 500 0",
             "angles": "0 0 0",
             "scales": "1 1 1",
-            "startdisabled": "1",
-            "spawnflags": "4097",
-            "wait": "1",
             "model": "maps/ze_otakuroom_pt/entities/zm_nuke_1923.vmdl",
             "io":
             [
                 {
-                    "outputname": "OnStartTouch",
-                    "targetname": "!self",
-                    "inputname": "Kill",
-                    "delay": 0.1,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnStartTouch",
+                    "outputname": "OnPlayerInZone",
                     "targetname": "lv3_ex_icarus_attack_hud",
                     "inputname": "FireUser1",
                     "delay": 0.0,
@@ -2134,10 +2145,26 @@
                 },
 
                 {
-                    "outputname": "OnStartTouch",
+                    "outputname": "OnPlayerOutZone",
                     "targetname": "lv3_ex_icarus_attack_hud",
-                    "inputname": "FireUser2",
+                    "inputname": "FireUser1",
                     "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnPlayerInZone",
+                    "targetname": "!self",
+                    "inputname": "Kill",
+                    "delay": 0.1,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnPlayerOutZone",
+                    "targetname": "!sef",
+                    "inputname": "Kill",
+                    "delay": 0.1,
                     "timestofire": -1
                 }
             ]    
@@ -2163,6 +2190,14 @@
                     "inputname": "FireUser1",
                     "delay": 0.02,
                     "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnUser1",
+                    "targetname": "!self",
+                    "inputname": "FireUser2",
+                    "delay": 0.0,
+                    "timestofire": 1
                 },
 
                 {
@@ -2571,6 +2606,38 @@
                     "inputname": "Trigger",
                     "delay": 0.0,
                     "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase07",
+                    "targetname": "lv3_ex_attack_web_relay",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase07",
+                    "targetname": "lv3_ex_attack_element_relay",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase08",
+                    "targetname": "lv3_ex_attack_hell_relay",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase08",
+                    "targetname": "lv3_ex_attack_element_relay",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
                 }
             ]
         },
@@ -2644,106 +2711,6 @@
 			"rendercolor": "255 255 255",
 			"renderamt": "255",
             "model": "maps/ze_otakuroom_pt/entities/ts_train_2026.vmdl"
-        },
-
-        {
-            "targetname": "lv3_ex_attack_element_box1",
-			"classname": "func_physbox",
-		    "origin": "-5344 2644 1100",
-			"angles": "0 0 0",
-			"scales": "1 1 1",
-            "parentname": "lv3_ex_attack_element_move1",
-            "damagefilter": "lv3_ex_attack_filter",        
-            "hoverposeangles": "0 0 0",
-            "hoverposeposition": "0 0 0",
-            "hoverposeflags": "0",
-            "fluiddragscale": "1",
-            "buoyancyscale": "1",
-            "masscenteroffset": "0 0 0",
-            "gamemass": "0",
-            "touchoutputperentitydelay": "0",
-            "exploitablebyplayer": "0",
-            "notsolid": "1",
-            "preferredcarryangles": "0 0 0",
-            "enableuseoutput": "-1",
-            "forcetoenablemotion": "0",
-            "damagetoenablemotion": "0",
-            "massscale": "0",
-            "damagetype": "0",
-            "skippresettle": "-1",
-            "lightmapstatic": "0",
-            "rendertocubemaps": "-1",
-            "object_culling": "0",
-            "fademaxdist": "0",
-            "fademindist": "-1",
-            "disablereceiveshadows": "-1",
-            "pressuredelay": "0",
-            "explodemagnitude": "0",
-            "spawnobject": "0",
-            "nodamageforces": "-1",
-            "explosion": "0",
-            "material": "0",
-            "health": "1215752191",
-            "propdata": "0",
-            "spawnflags": "17408",
-            "uselocaloffset": "-1",
-            "nointerpolate": "-1",
-            "performancemode": "0",
-            "exploderadius": "0",
-            "explodedamage": "0",
-            "disableshadows": "0",
-            "rendercolor": "255 255 255",
-            "renderamt": "255",
-            "rendermode": "kRenderNormal",
-            "renderfx": "kRenderFxNone",
-            "model": "maps/ze_otakuroom_pt/entities/ts_hitbox_1991.vmdl",
-            "io":
-            [
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "SetEnableCollisions",
-                    "overrideparam": "1",
-					"delay": 0.0,
-					"timestofire": -1
-				},
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_box1>SetEnableCollisions>0>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-                
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_text1>Enable>>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_ex_text1>Disable>>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_counter>SubTract>1>0.0>1",
-					"delay": 0.0,
-					"timestofire": -1
-				}
-            ]
         },
 
         {
@@ -2833,111 +2800,11 @@
 			"movedistance": "900",
 			"speed": "120",
             "spawnflags": "8",
-			"movedir": "0 60 0",
+			"movedir": "0 45 0",
             "fademindist": "-1",
 			"rendercolor": "255 255 255",
 			"renderamt": "255",
             "model": "maps/ze_otakuroom_pt/entities/ts_train_2026.vmdl"
-        },
-
-        {
-            "targetname": "lv3_ex_attack_element_box2",
-			"classname": "func_physbox",
-		    "origin": "-5344 2644 1100",
-			"angles": "0 0 0",
-			"scales": "1 1 1",
-            "parentname": "lv3_ex_attack_element_move2",
-            "damagefilter": "lv3_ex_attack_filter",          
-            "hoverposeangles": "0 0 0",
-            "hoverposeposition": "0 0 0",
-            "hoverposeflags": "0",
-            "fluiddragscale": "1",
-            "buoyancyscale": "1",
-            "masscenteroffset": "0 0 0",
-            "gamemass": "0",
-            "touchoutputperentitydelay": "0",
-            "exploitablebyplayer": "0",
-            "notsolid": "1",
-            "preferredcarryangles": "0 0 0",
-            "enableuseoutput": "-1",
-            "forcetoenablemotion": "0",
-            "damagetoenablemotion": "0",
-            "massscale": "0",
-            "damagetype": "0",
-            "skippresettle": "-1",
-            "lightmapstatic": "0",
-            "rendertocubemaps": "-1",
-            "object_culling": "0",
-            "fademaxdist": "0",
-            "fademindist": "-1",
-            "disablereceiveshadows": "-1",
-            "pressuredelay": "0",
-            "explodemagnitude": "0",
-            "spawnobject": "0",
-            "nodamageforces": "-1",
-            "explosion": "0",
-            "material": "0",
-            "health": "1215752191",
-            "propdata": "0",
-            "spawnflags": "17408",
-            "uselocaloffset": "-1",
-            "nointerpolate": "-1",
-            "performancemode": "0",
-            "exploderadius": "0",
-            "explodedamage": "0",
-            "disableshadows": "0",
-            "rendercolor": "255 255 255",
-            "renderamt": "255",
-            "rendermode": "kRenderNormal",
-            "renderfx": "kRenderFxNone",
-            "model": "maps/ze_otakuroom_pt/entities/ts_hitbox_1991.vmdl",
-            "io":
-            [
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "SetEnableCollisions",
-                    "overrideparam": "1",
-					"delay": 0.0,
-					"timestofire": -1
-				},
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_box2>SetEnableCollisions>0>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_text2>Enable>>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_ex_text2>Disable>>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_counter>SubTract>1>0.0>1",
-					"delay": 0.0,
-					"timestofire": -1
-				}
-            ]
         },
 
         {
@@ -2980,7 +2847,7 @@
             "color": "255 255 255",
             "fullbright": "1",
             "enabled": "0",
-            "message": "无",
+            "message": "召",
 			"fademaxdist": "0",
 		    "fademindist": "-1",
             "rendercolor": "255 255 255",
@@ -3006,7 +2873,7 @@
             "color": "0 0 0",
             "fullbright": "1",
             "enabled": "0",
-            "message": "无",
+            "message": "召",
 			"fademaxdist": "0",
 		    "fademindist": "-1",
             "rendercolor": "255 255 255",
@@ -3027,111 +2894,11 @@
 			"movedistance": "900",
 			"speed": "120",
             "spawnflags": "8",
-			"movedir": "0 120 0",
+			"movedir": "0 90 0",
             "fademindist": "-1",
 			"rendercolor": "255 255 255",
 			"renderamt": "255",
             "model": "maps/ze_otakuroom_pt/entities/ts_train_2026.vmdl"
-        },
-
-        {
-            "targetname": "lv3_ex_attack_element_box3",
-			"classname": "func_physbox",
-		    "origin": "-5344 2644 1100",
-			"angles": "0 0 0",
-			"scales": "1 1 1",
-            "parentname": "lv3_ex_attack_element_move3",
-            "damagefilter": "lv3_ex_attack_filter",          
-            "hoverposeangles": "0 0 0",
-            "hoverposeposition": "0 0 0",
-            "hoverposeflags": "0",
-            "fluiddragscale": "1",
-            "buoyancyscale": "1",
-            "masscenteroffset": "0 0 0",
-            "gamemass": "0",
-            "touchoutputperentitydelay": "0",
-            "exploitablebyplayer": "0",
-            "notsolid": "1",
-            "preferredcarryangles": "0 0 0",
-            "enableuseoutput": "-1",
-            "forcetoenablemotion": "0",
-            "damagetoenablemotion": "0",
-            "massscale": "0",
-            "damagetype": "0",
-            "skippresettle": "-1",
-            "lightmapstatic": "0",
-            "rendertocubemaps": "-1",
-            "object_culling": "0",
-            "fademaxdist": "0",
-            "fademindist": "-1",
-            "disablereceiveshadows": "-1",
-            "pressuredelay": "0",
-            "explodemagnitude": "0",
-            "spawnobject": "0",
-            "nodamageforces": "-1",
-            "explosion": "0",
-            "material": "0",
-            "health": "1215752191",
-            "propdata": "0",
-            "spawnflags": "17408",
-            "uselocaloffset": "-1",
-            "nointerpolate": "-1",
-            "performancemode": "0",
-            "exploderadius": "0",
-            "explodedamage": "0",
-            "disableshadows": "0",
-            "rendercolor": "255 255 255",
-            "renderamt": "255",
-            "rendermode": "kRenderNormal",
-            "renderfx": "kRenderFxNone",
-            "model": "maps/ze_otakuroom_pt/entities/ts_hitbox_1991.vmdl",
-            "io":
-            [
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "SetEnableCollisions",
-                    "overrideparam": "1",
-					"delay": 0.0,
-					"timestofire": -1
-				},
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_box3>SetEnableCollisions>0>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_text3>Enable>>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_ex_text3>Disable>>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_counter>SubTract>1>0.0>1",
-					"delay": 0.0,
-					"timestofire": -1
-				}
-            ]
         },
 
         {
@@ -3221,111 +2988,11 @@
 			"movedistance": "900",
 			"speed": "120",
             "spawnflags": "8",
-			"movedir": "180 0 0",
+			"movedir": "0 135 0",
             "fademindist": "-1",
 			"rendercolor": "255 255 255",
 			"renderamt": "255",
             "model": "maps/ze_otakuroom_pt/entities/ts_train_2026.vmdl"
-        },
-
-        {
-            "targetname": "lv3_ex_attack_element_box4",
-			"classname": "func_physbox",
-		    "origin": "-5344 2644 1100",
-			"angles": "0 0 0",
-			"scales": "1 1 1",
-            "parentname": "lv3_ex_attack_element_move4",
-            "damagefilter": "lv3_ex_attack_filter",          
-            "hoverposeangles": "0 0 0",
-            "hoverposeposition": "0 0 0",
-            "hoverposeflags": "0",
-            "fluiddragscale": "1",
-            "buoyancyscale": "1",
-            "masscenteroffset": "0 0 0",
-            "gamemass": "0",
-            "touchoutputperentitydelay": "0",
-            "exploitablebyplayer": "0",
-            "notsolid": "1",
-            "preferredcarryangles": "0 0 0",
-            "enableuseoutput": "-1",
-            "forcetoenablemotion": "0",
-            "damagetoenablemotion": "0",
-            "massscale": "0",
-            "damagetype": "0",
-            "skippresettle": "-1",
-            "lightmapstatic": "0",
-            "rendertocubemaps": "-1",
-            "object_culling": "0",
-            "fademaxdist": "0",
-            "fademindist": "-1",
-            "disablereceiveshadows": "-1",
-            "pressuredelay": "0",
-            "explodemagnitude": "0",
-            "spawnobject": "0",
-            "nodamageforces": "-1",
-            "explosion": "0",
-            "material": "0",
-            "health": "1215752191",
-            "propdata": "0",
-            "spawnflags": "17408",
-            "uselocaloffset": "-1",
-            "nointerpolate": "-1",
-            "performancemode": "0",
-            "exploderadius": "0",
-            "explodedamage": "0",
-            "disableshadows": "0",
-            "rendercolor": "255 255 255",
-            "renderamt": "255",
-            "rendermode": "kRenderNormal",
-            "renderfx": "kRenderFxNone",
-            "model": "maps/ze_otakuroom_pt/entities/ts_hitbox_1991.vmdl",
-            "io":
-            [
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "SetEnableCollisions",
-                    "overrideparam": "1",
-					"delay": 0.0,
-					"timestofire": -1
-				},
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_box4>SetEnableCollisions>0>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_text4>Enable>>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_ex_text4>Disable>>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_counter>SubTract>1>0.0>1",
-					"delay": 0.0,
-					"timestofire": -1
-				}
-            ]
         },
 
         {
@@ -3415,111 +3082,11 @@
 			"movedistance": "900",
 			"speed": "120",
             "spawnflags": "8",
-			"movedir": "0 240 0",
+			"movedir": "0 180 0",
             "fademindist": "-1",
 			"rendercolor": "255 255 255",
 			"renderamt": "255",
             "model": "maps/ze_otakuroom_pt/entities/ts_train_2026.vmdl"
-        },
-
-        {
-            "targetname": "lv3_ex_attack_element_box5",
-			"classname": "func_physbox",
-		    "origin": "-5344 2644 1100",
-			"angles": "0 0 0",
-			"scales": "1 1 1",
-            "parentname": "lv3_ex_attack_element_move5",
-            "damagefilter": "lv3_ex_attack_filter",          
-            "hoverposeangles": "0 0 0",
-            "hoverposeposition": "0 0 0",
-            "hoverposeflags": "0",
-            "fluiddragscale": "1",
-            "buoyancyscale": "1",
-            "masscenteroffset": "0 0 0",
-            "gamemass": "0",
-            "touchoutputperentitydelay": "0",
-            "exploitablebyplayer": "0",
-            "notsolid": "1",
-            "preferredcarryangles": "0 0 0",
-            "enableuseoutput": "-1",
-            "forcetoenablemotion": "0",
-            "damagetoenablemotion": "0",
-            "massscale": "0",
-            "damagetype": "0",
-            "skippresettle": "-1",
-            "lightmapstatic": "0",
-            "rendertocubemaps": "-1",
-            "object_culling": "0",
-            "fademaxdist": "0",
-            "fademindist": "-1",
-            "disablereceiveshadows": "-1",
-            "pressuredelay": "0",
-            "explodemagnitude": "0",
-            "spawnobject": "0",
-            "nodamageforces": "-1",
-            "explosion": "0",
-            "material": "0",
-            "health": "1215752191",
-            "propdata": "0",
-            "spawnflags": "17408",
-            "uselocaloffset": "-1",
-            "nointerpolate": "-1",
-            "performancemode": "0",
-            "exploderadius": "0",
-            "explodedamage": "0",
-            "disableshadows": "0",
-            "rendercolor": "255 255 255",
-            "renderamt": "255",
-            "rendermode": "kRenderNormal",
-            "renderfx": "kRenderFxNone",
-            "model": "maps/ze_otakuroom_pt/entities/ts_hitbox_1991.vmdl",
-            "io":
-            [
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "SetEnableCollisions",
-                    "overrideparam": "1",
-					"delay": 0.0,
-					"timestofire": -1
-				},
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_box5>SetEnableCollisions>0>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_text5>Enable>>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_ex_text5>Disable>>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_counter>SubTract>1>0.0>1",
-					"delay": 0.0,
-					"timestofire": -1
-				}
-            ]
         },
 
         {
@@ -3609,111 +3176,11 @@
 			"movedistance": "900",
 			"speed": "120",
             "spawnflags": "8",
-			"movedir": "0 300 0",
+			"movedir": "0 225 0",
             "fademindist": "-1",
 			"rendercolor": "255 255 255",
 			"renderamt": "255",
             "model": "maps/ze_otakuroom_pt/entities/ts_train_2026.vmdl"
-        },
-
-        {
-            "targetname": "lv3_ex_attack_element_box6",
-			"classname": "func_physbox",
-		    "origin": "-5344 2644 1100",
-			"angles": "0 0 0",
-			"scales": "1 1 1",
-            "parentname": "lv3_ex_attack_element_move6",
-            "damagefilter": "lv3_ex_attack_filter",          
-            "hoverposeangles": "0 0 0",
-            "hoverposeposition": "0 0 0",
-            "hoverposeflags": "0",
-            "fluiddragscale": "1",
-            "buoyancyscale": "1",
-            "masscenteroffset": "0 0 0",
-            "gamemass": "0",
-            "touchoutputperentitydelay": "0",
-            "exploitablebyplayer": "0",
-            "notsolid": "1",
-            "preferredcarryangles": "0 0 0",
-            "enableuseoutput": "-1",
-            "forcetoenablemotion": "0",
-            "damagetoenablemotion": "0",
-            "massscale": "0",
-            "damagetype": "0",
-            "skippresettle": "-1",
-            "lightmapstatic": "0",
-            "rendertocubemaps": "-1",
-            "object_culling": "0",
-            "fademaxdist": "0",
-            "fademindist": "-1",
-            "disablereceiveshadows": "-1",
-            "pressuredelay": "0",
-            "explodemagnitude": "0",
-            "spawnobject": "0",
-            "nodamageforces": "-1",
-            "explosion": "0",
-            "material": "0",
-            "health": "1215752191",
-            "propdata": "0",
-            "spawnflags": "17408",
-            "uselocaloffset": "-1",
-            "nointerpolate": "-1",
-            "performancemode": "0",
-            "exploderadius": "0",
-            "explodedamage": "0",
-            "disableshadows": "0",
-            "rendercolor": "255 255 255",
-            "renderamt": "255",
-            "rendermode": "kRenderNormal",
-            "renderfx": "kRenderFxNone",
-            "model": "maps/ze_otakuroom_pt/entities/ts_hitbox_1991.vmdl",
-            "io":
-            [
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "SetEnableCollisions",
-                    "overrideparam": "1",
-					"delay": 0.0,
-					"timestofire": -1
-				},
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_box6>SetEnableCollisions>0>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_text6>Enable>>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnUser1",
-                    "targetname": "!self",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_ex_text6>Disable>>0.0>1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "AddOutPut",
-                    "overrideparam": "OnHealthChanged>lv3_ex_attack_element_counter>SubTract>1>0.0>1",
-					"delay": 0.0,
-					"timestofire": -1
-				}
-            ]
         },
 
         {
@@ -3727,6 +3194,194 @@
             "boltwidth": "5",
             "noiseamplitude": "0",
             "lightningstart": "lv3_ex_attack_element_laser6",
+            "lightningend": "lv3_ex_attack_ball",
+            "damage": "0",
+            "dissolvetype": "-1",
+            "touchtype": "0",
+            "clipstyle": "0",
+            "spawnflags": "0",
+            "rendercolor": "255 0 0",
+            "renderamt": "255",
+            "rendermode": "kRenderNormal",
+            "renderfx": "kRenderFxNone"
+        },
+
+        {
+			"targetname": "lv3_ex_attack_element_text7",
+            "classname": "point_worldtext",
+			"origin": "-5344 2644 1100",
+            "angles": "0 90 90",
+			"scales": "3 3 3",
+            "parentname": "lv3_ex_attack_element_move7",
+			"depth_render_offset": "0.125",
+			"reorient_mode": "1",
+            "justify_vertical": "1",
+			"justify_horizontal": "1",
+            "font_name": "Arial Black",
+            "font_size": "150",
+            "world_units_per_pixel": "0.25",
+            "color": "255 255 255",
+            "fullbright": "1",
+            "enabled": "0",
+            "message": "絲",
+			"fademaxdist": "0",
+		    "fademindist": "-1",
+            "rendercolor": "255 255 255",
+            "renderamt": "255",
+            "rendermode": "kRenderNormal",
+            "renderfx": "kRenderFxNone"
+        },
+
+        {
+			"targetname": "lv3_ex_attack_element_ex_text7",
+            "classname": "point_worldtext",
+			"origin": "-5344 2644 1100",
+            "angles": "0 90 90",
+			"scales": "3 3 3",
+            "parentname": "lv3_ex_attack_element_move7",
+			"depth_render_offset": "0.125",
+			"reorient_mode": "1",
+            "justify_vertical": "1",
+			"justify_horizontal": "1",
+            "font_name": "Arial Black",
+            "font_size": "150",
+            "world_units_per_pixel": "0.25",
+            "color": "0 0 0",
+            "fullbright": "1",
+            "enabled": "0",
+            "message": "絲",
+			"fademaxdist": "0",
+		    "fademindist": "-1",
+            "rendercolor": "255 255 255",
+            "renderamt": "255",
+            "rendermode": "kRenderNormal",
+            "renderfx": "kRenderFxNone"
+        },
+
+        {
+            "targetname": "lv3_ex_attack_element_move7",
+			"classname": "func_movelinear",
+		    "origin": "-5344 2644 1100",
+			"angles": "0 0 0",
+			"scales": "1 1 1",
+            "parentname": "lv3_ex_attack_element_rot",
+            "fadescale": "1",
+            "blockdamage": "0",
+			"movedistance": "900",
+			"speed": "120",
+            "spawnflags": "8",
+			"movedir": "0 270 0",
+            "fademindist": "-1",
+			"rendercolor": "255 255 255",
+			"renderamt": "255",
+            "model": "maps/ze_otakuroom_pt/entities/ts_train_2026.vmdl"
+        },
+
+        {
+            "targetname": "lv3_ex_attack_element_laser7",
+            "classname": "env_beam",
+            "origin": "-5344 2644 1100",
+            "angles": "0 0 0",
+            "scales": "1 1 1",
+            "parentname": "lv3_ex_attack_element_move7",
+            "life": "0",
+            "boltwidth": "5",
+            "noiseamplitude": "0",
+            "lightningstart": "lv3_ex_attack_element_laser7",
+            "lightningend": "lv3_ex_attack_ball",
+            "damage": "0",
+            "dissolvetype": "-1",
+            "touchtype": "0",
+            "clipstyle": "0",
+            "spawnflags": "0",
+            "rendercolor": "255 0 0",
+            "renderamt": "255",
+            "rendermode": "kRenderNormal",
+            "renderfx": "kRenderFxNone"
+        },
+
+        {
+			"targetname": "lv3_ex_attack_element_text8",
+            "classname": "point_worldtext",
+			"origin": "-5344 2644 1100",
+            "angles": "0 90 90",
+			"scales": "3 3 3",
+            "parentname": "lv3_ex_attack_element_move8",
+			"depth_render_offset": "0.125",
+			"reorient_mode": "1",
+            "justify_vertical": "1",
+			"justify_horizontal": "1",
+            "font_name": "Arial Black",
+            "font_size": "150",
+            "world_units_per_pixel": "0.25",
+            "color": "255 255 255",
+            "fullbright": "1",
+            "enabled": "0",
+            "message": "天",
+			"fademaxdist": "0",
+		    "fademindist": "-1",
+            "rendercolor": "255 255 255",
+            "renderamt": "255",
+            "rendermode": "kRenderNormal",
+            "renderfx": "kRenderFxNone"
+        },
+
+        {
+			"targetname": "lv3_ex_attack_element_ex_text8",
+            "classname": "point_worldtext",
+			"origin": "-5344 2644 1100",
+            "angles": "0 90 90",
+			"scales": "3 3 3",
+            "parentname": "lv3_ex_attack_element_move8",
+			"depth_render_offset": "0.125",
+			"reorient_mode": "1",
+            "justify_vertical": "1",
+			"justify_horizontal": "1",
+            "font_name": "Arial Black",
+            "font_size": "150",
+            "world_units_per_pixel": "0.25",
+            "color": "0 0 0",
+            "fullbright": "1",
+            "enabled": "0",
+            "message": "天",
+			"fademaxdist": "0",
+		    "fademindist": "-1",
+            "rendercolor": "255 255 255",
+            "renderamt": "255",
+            "rendermode": "kRenderNormal",
+            "renderfx": "kRenderFxNone"
+        },
+
+        {
+            "targetname": "lv3_ex_attack_element_move8",
+			"classname": "func_movelinear",
+		    "origin": "-5344 2644 1100",
+			"angles": "0 0 0",
+			"scales": "1 1 1",
+            "parentname": "lv3_ex_attack_element_rot",
+            "fadescale": "1",
+            "blockdamage": "0",
+			"movedistance": "900",
+			"speed": "120",
+            "spawnflags": "8",
+			"movedir": "0 315 0",
+            "fademindist": "-1",
+			"rendercolor": "255 255 255",
+			"renderamt": "255",
+            "model": "maps/ze_otakuroom_pt/entities/ts_train_2026.vmdl"
+        },
+
+        {
+            "targetname": "lv3_ex_attack_element_laser8",
+            "classname": "env_beam",
+            "origin": "-5344 2644 1100",
+            "angles": "0 0 0",
+            "scales": "1 1 1",
+            "parentname": "lv3_ex_attack_element_move8",
+            "life": "0",
+            "boltwidth": "5",
+            "noiseamplitude": "0",
+            "lightningstart": "lv3_ex_attack_element_laser8",
             "lightningend": "lv3_ex_attack_ball",
             "damage": "0",
             "dissolvetype": "-1",
@@ -3808,214 +3463,6 @@
         },
 
         {
-			"targetname": "lv3_ex_attack_hp2",
-            "classname": "point_worldtext",
-			"origin": "-5344 2644 1145",
-            "angles": "0 90 90",
-			"scales": "1 1 1",
-            "parentname": "ts_plt",
-			"depth_render_offset": "0.125",
-			"reorient_mode": "1",
-            "justify_vertical": "1",
-			"justify_horizontal": "1",
-            "font_name": "Arial Black",
-            "font_size": "150",
-            "world_units_per_pixel": "0.25",
-            "color": "255 0 0",
-            "fullbright": "1",
-            "enabled": "0",
-            "message": "0",
-			"fademaxdist": "0",
-		    "fademindist": "-1",
-            "rendercolor": "255 255 255",
-            "renderamt": "255",
-            "rendermode": "kRenderNormal",
-            "renderfx": "kRenderFxNone"
-        },
-
-        {
-			"targetname": "lv3_ex_attack_hp3",
-            "classname": "point_worldtext",
-			"origin": "-5344 2644 1145",
-            "angles": "0 90 90",
-			"scales": "1 1 1",
-            "parentname": "ts_plt",
-			"depth_render_offset": "0.125",
-			"reorient_mode": "1",
-            "justify_vertical": "1",
-			"justify_horizontal": "1",
-            "font_name": "Arial Black",
-            "font_size": "150",
-            "world_units_per_pixel": "0.25",
-            "color": "255 128 0",
-            "fullbright": "1",
-            "enabled": "0",
-            "message": "0",
-			"fademaxdist": "0",
-		    "fademindist": "-1",
-            "rendercolor": "255 255 255",
-            "renderamt": "255",
-            "rendermode": "kRenderNormal",
-            "renderfx": "kRenderFxNone"
-        },
-
-        {
-			"targetname": "lv3_ex_attack_hp4",
-            "classname": "point_worldtext",
-			"origin": "-5344 2644 1145",
-            "angles": "0 90 90",
-			"scales": "1 1 1",
-            "parentname": "ts_plt",
-			"depth_render_offset": "0.125",
-			"reorient_mode": "1",
-            "justify_vertical": "1",
-			"justify_horizontal": "1",
-            "font_name": "Arial Black",
-            "font_size": "150",
-            "world_units_per_pixel": "0.25",
-            "color": "255 255 0",
-            "fullbright": "1",
-            "enabled": "0",
-            "message": "0",
-			"fademaxdist": "0",
-		    "fademindist": "-1",
-            "rendercolor": "255 255 255",
-            "renderamt": "255",
-            "rendermode": "kRenderNormal",
-            "renderfx": "kRenderFxNone"
-        },
-
-        {
-			"targetname": "lv3_ex_attack_hp5",
-            "classname": "point_worldtext",
-			"origin": "-5344 2644 1145",
-            "angles": "0 90 90",
-			"scales": "1 1 1",
-            "parentname": "ts_plt",
-			"depth_render_offset": "0.125",
-			"reorient_mode": "1",
-            "justify_vertical": "1",
-			"justify_horizontal": "1",
-            "font_name": "Arial Black",
-            "font_size": "150",
-            "world_units_per_pixel": "0.25",
-            "color": "0 255 0",
-            "fullbright": "1",
-            "enabled": "0",
-            "message": "0",
-			"fademaxdist": "0",
-		    "fademindist": "-1",
-            "rendercolor": "255 255 255",
-            "renderamt": "255",
-            "rendermode": "kRenderNormal",
-            "renderfx": "kRenderFxNone"
-        },
-
-        {
-			"targetname": "lv3_ex_attack_hp6",
-            "classname": "point_worldtext",
-			"origin": "-5344 2644 1145",
-            "angles": "0 90 90",
-			"scales": "1 1 1",
-            "parentname": "ts_plt",
-			"depth_render_offset": "0.125",
-			"reorient_mode": "1",
-            "justify_vertical": "1",
-			"justify_horizontal": "1",
-            "font_name": "Arial Black",
-            "font_size": "150",
-            "world_units_per_pixel": "0.25",
-            "color": "0 255 255",
-            "fullbright": "1",
-            "enabled": "0",
-            "message": "0",
-			"fademaxdist": "0",
-		    "fademindist": "-1",
-            "rendercolor": "255 255 255",
-            "renderamt": "255",
-            "rendermode": "kRenderNormal",
-            "renderfx": "kRenderFxNone"
-        },
-
-        {
-			"targetname": "lv3_ex_attack_hp7",
-            "classname": "point_worldtext",
-			"origin": "-5344 2644 1145",
-            "angles": "0 90 90",
-			"scales": "1 1 1",
-            "parentname": "ts_plt",
-			"depth_render_offset": "0.125",
-			"reorient_mode": "1",
-            "justify_vertical": "1",
-			"justify_horizontal": "1",
-            "font_name": "Arial Black",
-            "font_size": "150",
-            "world_units_per_pixel": "0.25",
-            "color": "0 0 255",
-            "fullbright": "1",
-            "enabled": "0",
-            "message": "0",
-			"fademaxdist": "0",
-		    "fademindist": "-1",
-            "rendercolor": "255 255 255",
-            "renderamt": "255",
-            "rendermode": "kRenderNormal",
-            "renderfx": "kRenderFxNone"
-        },
-
-        {
-			"targetname": "lv3_ex_attack_hp8",
-            "classname": "point_worldtext",
-			"origin": "-5344 2644 1145",
-            "angles": "0 90 90",
-			"scales": "1 1 1",
-            "parentname": "ts_plt",
-			"depth_render_offset": "0.125",
-			"reorient_mode": "1",
-            "justify_vertical": "1",
-			"justify_horizontal": "1",
-            "font_name": "Arial Black",
-            "font_size": "150",
-            "world_units_per_pixel": "0.25",
-            "color": "255 0 255",
-            "fullbright": "1",
-            "enabled": "0",
-            "message": "0",
-			"fademaxdist": "0",
-		    "fademindist": "-1",
-            "rendercolor": "255 255 255",
-            "renderamt": "255",
-            "rendermode": "kRenderNormal",
-            "renderfx": "kRenderFxNone"
-        },
-
-        {
-			"targetname": "lv3_ex_attack_hp9",
-            "classname": "point_worldtext",
-			"origin": "-5344 2644 1145",
-            "angles": "0 90 90",
-			"scales": "1 1 1",
-            "parentname": "ts_plt",
-			"depth_render_offset": "0.125",
-			"reorient_mode": "1",
-            "justify_vertical": "1",
-			"justify_horizontal": "1",
-            "font_name": "Arial Black",
-            "font_size": "150",
-            "world_units_per_pixel": "0.25",
-            "color": "128 0 255",
-            "fullbright": "1",
-            "enabled": "0",
-            "message": "0",
-			"fademaxdist": "0",
-		    "fademindist": "-1",
-            "rendercolor": "255 255 255",
-            "renderamt": "255",
-            "rendermode": "kRenderNormal",
-            "renderfx": "kRenderFxNone"
-        },
-
-        {
 			"targetname": "lv3_ex_attack_hp_case",
             "classname": "logic_case",
             "io":
@@ -4023,647 +3470,89 @@
                 {
                     "outputname": "OnCase01",
                     "targetname": "lv3_ex_attack_hp1",
-                    "inputname": "Enable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "255 0 0",
                     "delay": 0.0,
                     "timestofire": -1
                 },
 
-                {
-                    "outputname": "OnCase01",
-                    "targetname": "lv3_ex_attack_hp2",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase01",
-                    "targetname": "lv3_ex_attack_hp3",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase01",
-                    "targetname": "lv3_ex_attack_hp4",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase01",
-                    "targetname": "lv3_ex_attack_hp5",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase01",
-                    "targetname": "lv3_ex_attack_hp6",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase01",
-                    "targetname": "lv3_ex_attack_hp7",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase01",
-                    "targetname": "lv3_ex_attack_hp8",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase01",
-                    "targetname": "lv3_ex_attack_hp9",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-                
                 {
                     "outputname": "OnCase02",
                     "targetname": "lv3_ex_attack_hp1",
-                    "inputname": "Disable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "255 128 0",
                     "delay": 0.0,
                     "timestofire": -1
                 },
 
-                {
-                    "outputname": "OnCase02",
-                    "targetname": "lv3_ex_attack_hp2",
-                    "inputname": "Enable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase02",
-                    "targetname": "lv3_ex_attack_hp3",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase02",
-                    "targetname": "lv3_ex_attack_hp4",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase02",
-                    "targetname": "lv3_ex_attack_hp5",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase02",
-                    "targetname": "lv3_ex_attack_hp6",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase02",
-                    "targetname": "lv3_ex_attack_hp7",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase02",
-                    "targetname": "lv3_ex_attack_hp8",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase02",
-                    "targetname": "lv3_ex_attack_hp9",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-                
                 {
                     "outputname": "OnCase03",
                     "targetname": "lv3_ex_attack_hp1",
-                    "inputname": "Disable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "255 255 0",
                     "delay": 0.0,
                     "timestofire": -1
                 },
 
-                {
-                    "outputname": "OnCase03",
-                    "targetname": "lv3_ex_attack_hp2",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase03",
-                    "targetname": "lv3_ex_attack_hp3",
-                    "inputname": "Enable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase03",
-                    "targetname": "lv3_ex_attack_hp4",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase03",
-                    "targetname": "lv3_ex_attack_hp5",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase03",
-                    "targetname": "lv3_ex_attack_hp6",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase03",
-                    "targetname": "lv3_ex_attack_hp7",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase03",
-                    "targetname": "lv3_ex_attack_hp8",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase03",
-                    "targetname": "lv3_ex_attack_hp9",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-                
                 {
                     "outputname": "OnCase04",
                     "targetname": "lv3_ex_attack_hp1",
-                    "inputname": "Disable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "128 255 0",
                     "delay": 0.0,
                     "timestofire": -1
                 },
 
-                {
-                    "outputname": "OnCase04",
-                    "targetname": "lv3_ex_attack_hp2",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase04",
-                    "targetname": "lv3_ex_attack_hp3",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase04",
-                    "targetname": "lv3_ex_attack_hp4",
-                    "inputname": "Enable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase04",
-                    "targetname": "lv3_ex_attack_hp5",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase04",
-                    "targetname": "lv3_ex_attack_hp6",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase04",
-                    "targetname": "lv3_ex_attack_hp7",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase04",
-                    "targetname": "lv3_ex_attack_hp8",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase04",
-                    "targetname": "lv3_ex_attack_hp9",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-                
                 {
                     "outputname": "OnCase05",
                     "targetname": "lv3_ex_attack_hp1",
-                    "inputname": "Disable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "0 255 0",
                     "delay": 0.0,
                     "timestofire": -1
                 },
 
-                {
-                    "outputname": "OnCase05",
-                    "targetname": "lv3_ex_attack_hp2",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase05",
-                    "targetname": "lv3_ex_attack_hp3",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase05",
-                    "targetname": "lv3_ex_attack_hp4",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase05",
-                    "targetname": "lv3_ex_attack_hp5",
-                    "inputname": "Enable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase05",
-                    "targetname": "lv3_ex_attack_hp6",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase05",
-                    "targetname": "lv3_ex_attack_hp7",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase05",
-                    "targetname": "lv3_ex_attack_hp8",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase05",
-                    "targetname": "lv3_ex_attack_hp9",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-                
                 {
                     "outputname": "OnCase06",
                     "targetname": "lv3_ex_attack_hp1",
-                    "inputname": "Disable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "0 255 128",
                     "delay": 0.0,
                     "timestofire": -1
                 },
 
-                {
-                    "outputname": "OnCase06",
-                    "targetname": "lv3_ex_attack_hp2",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase06",
-                    "targetname": "lv3_ex_attack_hp3",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase06",
-                    "targetname": "lv3_ex_attack_hp4",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase06",
-                    "targetname": "lv3_ex_attack_hp5",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase06",
-                    "targetname": "lv3_ex_attack_hp6",
-                    "inputname": "Enable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase06",
-                    "targetname": "lv3_ex_attack_hp7",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase06",
-                    "targetname": "lv3_ex_attack_hp8",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase06",
-                    "targetname": "lv3_ex_attack_hp9",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-                
                 {
                     "outputname": "OnCase07",
                     "targetname": "lv3_ex_attack_hp1",
-                    "inputname": "Disable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "0 255 255",
                     "delay": 0.0,
                     "timestofire": -1
                 },
 
-                {
-                    "outputname": "OnCase07",
-                    "targetname": "lv3_ex_attack_hp2",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase07",
-                    "targetname": "lv3_ex_attack_hp3",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase07",
-                    "targetname": "lv3_ex_attack_hp4",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase07",
-                    "targetname": "lv3_ex_attack_hp5",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase07",
-                    "targetname": "lv3_ex_attack_hp6",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase07",
-                    "targetname": "lv3_ex_attack_hp7",
-                    "inputname": "Enable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase07",
-                    "targetname": "lv3_ex_attack_hp8",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase07",
-                    "targetname": "lv3_ex_attack_hp9",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-                
                 {
                     "outputname": "OnCase08",
                     "targetname": "lv3_ex_attack_hp1",
-                    "inputname": "Disable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "0 128 255",
                     "delay": 0.0,
                     "timestofire": -1
                 },
 
-                {
-                    "outputname": "OnCase08",
-                    "targetname": "lv3_ex_attack_hp2",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase08",
-                    "targetname": "lv3_ex_attack_hp3",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase08",
-                    "targetname": "lv3_ex_attack_hp4",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase08",
-                    "targetname": "lv3_ex_attack_hp5",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase08",
-                    "targetname": "lv3_ex_attack_hp6",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase08",
-                    "targetname": "lv3_ex_attack_hp7",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase08",
-                    "targetname": "lv3_ex_attack_hp8",
-                    "inputname": "Enable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase08",
-                    "targetname": "lv3_ex_attack_hp9",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-                
                 {
                     "outputname": "OnCase09",
                     "targetname": "lv3_ex_attack_hp1",
-                    "inputname": "Disable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "0 0 255",
                     "delay": 0.0,
                     "timestofire": -1
                 },
 
                 {
-                    "outputname": "OnCase09",
-                    "targetname": "lv3_ex_attack_hp2",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase09",
-                    "targetname": "lv3_ex_attack_hp3",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase09",
-                    "targetname": "lv3_ex_attack_hp4",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase09",
-                    "targetname": "lv3_ex_attack_hp5",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase09",
-                    "targetname": "lv3_ex_attack_hp6",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase09",
-                    "targetname": "lv3_ex_attack_hp7",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase09",
-                    "targetname": "lv3_ex_attack_hp8",
-                    "inputname": "Disable",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnCase09",
-                    "targetname": "lv3_ex_attack_hp9",
-                    "inputname": "Enable",
+                    "outputname": "OnCase10",
+                    "targetname": "lv3_ex_attack_hp1",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "255 255 255",
                     "delay": 0.0,
                     "timestofire": -1
                 }
@@ -5199,7 +4088,8 @@
                 {
                     "outputname": "OnTrigger",
                     "targetname": "lv3_ex_attack_element_text1",
-                    "inputname": "Disable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "0 0 0",
                     "delay": 2.0,
                     "timestofire": -1
                 },
@@ -5333,7 +4223,7 @@
             [
                 {
                     "outputname": "OnCase01",
-                    "targetname": "lv3_ex_attack_meteor_maker1",
+                    "targetname": "lv3_ex_attack_beam_maker1",
                     "inputname": "ForceSpawn",
                     "delay": 0.0,
                     "timestofire": -1
@@ -5349,7 +4239,7 @@
 
                 {
                     "outputname": "OnCase02",
-                    "targetname": "lv3_ex_attack_meteor_maker2",
+                    "targetname": "lv3_ex_attack_beam_maker2",
                     "inputname": "ForceSpawn",
                     "delay": 0.0,
                     "timestofire": -1
@@ -5365,7 +4255,7 @@
 
                 {
                     "outputname": "OnCase03",
-                    "targetname": "lv3_ex_attack_meteor_maker3",
+                    "targetname": "lv3_ex_attack_beam_maker3",
                     "inputname": "ForceSpawn",
                     "delay": 0.0,
                     "timestofire": -1
@@ -5381,7 +4271,7 @@
 
                 {
                     "outputname": "OnCase04",
-                    "targetname": "lv3_ex_attack_meteor_maker4",
+                    "targetname": "lv3_ex_attack_beam_maker4",
                     "inputname": "ForceSpawn",
                     "delay": 0.0,
                     "timestofire": -1
@@ -5397,7 +4287,7 @@
 
                 {
                     "outputname": "OnCase05",
-                    "targetname": "lv3_ex_attack_meteor_maker5",
+                    "targetname": "lv3_ex_attack_beam_maker5",
                     "inputname": "ForceSpawn",
                     "delay": 0.0,
                     "timestofire": -1
@@ -5413,7 +4303,7 @@
 
                 {
                     "outputname": "OnCase06",
-                    "targetname": "lv3_ex_attack_meteor_maker6",
+                    "targetname": "lv3_ex_attack_beam_maker6",
                     "inputname": "ForceSpawn",
                     "delay": 0.0,
                     "timestofire": -1
@@ -5429,7 +4319,7 @@
 
                 {
                     "outputname": "OnCase07",
-                    "targetname": "lv3_ex_attack_meteor_maker7",
+                    "targetname": "lv3_ex_attack_beam_maker7",
                     "inputname": "ForceSpawn",
                     "delay": 0.0,
                     "timestofire": -1
@@ -5446,7 +4336,7 @@
         },
 
         {
-			"targetname": "lv3_ex_attack_meteor_maker1",
+			"targetname": "lv3_ex_attack_beam_maker1",
             "classname": "env_entity_maker",
 			"origin": "-5050 2644 1030",
 			"angles": "0 0 0",
@@ -5457,7 +4347,7 @@
 		},
 
         {
-			"targetname": "lv3_ex_attack_meteor_maker2",
+			"targetname": "lv3_ex_attack_beam_maker2",
             "classname": "env_entity_maker",
 			"origin": "-5000 2644 1030",
 			"angles": "0 0 0",
@@ -5468,7 +4358,7 @@
 		},
 
         {
-			"targetname": "lv3_ex_attack_meteor_maker3",
+			"targetname": "lv3_ex_attack_beam_maker3",
             "classname": "env_entity_maker",
 			"origin": "-4950 2644 1030",
 			"angles": "0 0 0",
@@ -5479,7 +4369,7 @@
 		},
 
         {
-			"targetname": "lv3_ex_attack_meteor_maker4",
+			"targetname": "lv3_ex_attack_beam_maker4",
             "classname": "env_entity_maker",
 			"origin": "-4900 2644 1030",
 			"angles": "0 0 0",
@@ -5490,7 +4380,7 @@
 		},
 
         {
-			"targetname": "lv3_ex_attack_meteor_maker5",
+			"targetname": "lv3_ex_attack_beam_maker5",
             "classname": "env_entity_maker",
 			"origin": "-4850 2644 1030",
 			"angles": "0 0 0",
@@ -5501,7 +4391,7 @@
 		},
 
         {
-			"targetname": "lv3_ex_attack_meteor_maker6",
+			"targetname": "lv3_ex_attack_beam_maker6",
             "classname": "env_entity_maker",
 			"origin": "-4800 2644 1030",
 			"angles": "0 0 0",
@@ -5512,7 +4402,7 @@
 		},
 
         {
-			"targetname": "lv3_ex_attack_meteor_maker7",
+			"targetname": "lv3_ex_attack_beam_maker7",
             "classname": "env_entity_maker",
 			"origin": "-4750 2644 1030",
 			"angles": "0 0 0",
@@ -5589,7 +4479,8 @@
                 {
                     "outputname": "OnTrigger",
                     "targetname": "lv3_ex_attack_element_text2",
-                    "inputname": "Disable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "0 0 0",
                     "delay": 2.0,
                     "timestofire": -1
                 },
@@ -5771,7 +4662,8 @@
                 {
                     "outputname": "OnTrigger",
                     "targetname": "lv3_ex_attack_element_text3",
-                    "inputname": "Disable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "0 0 0",
                     "delay": 2.0,
                     "timestofire": -1
                 },
@@ -5902,7 +4794,7 @@
         {
 			"targetname": "lv3_ex_attack_dice_maker",
             "classname": "env_entity_maker",
-			"origin": "-5344 2644 1080",
+			"origin": "-5344 2644 1065",
 			"angles": "0 0 0",
 			"scales": "1 1 1",
             "parentname": "lv3_ex_attack_rot",
@@ -5987,7 +4879,8 @@
                 {
                     "outputname": "OnTrigger",
                     "targetname": "lv3_ex_attack_element_text4",
-                    "inputname": "Disable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "0 0 0",
                     "delay": 2.0,
                     "timestofire": -1
                 },
@@ -6184,7 +5077,8 @@
                 {
                     "outputname": "OnTrigger",
                     "targetname": "lv3_ex_attack_element_text5",
-                    "inputname": "Disable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "0 0 0",
                     "delay": 2.0,
                     "timestofire": -1
                 },
@@ -6225,7 +5119,7 @@
                     "outputname": "OnTrigger",
                     "targetname": "lv3_ex_attack_case",
                     "inputname": "PickRandomShuffle",
-                    "delay": 14.0,
+                    "delay": 13.0,
                     "timestofire": -1
                 }
             ]
@@ -6361,7 +5255,8 @@
                 {
                     "outputname": "OnTrigger",
                     "targetname": "lv3_ex_attack_element_text6",
-                    "inputname": "Disable",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "0 0 0",
                     "delay": 2.0,
                     "timestofire": -1
                 },
@@ -6455,7 +5350,7 @@
             "classname": "point_hurt",
             "damagetarget": "!activator",
             "damageradius": "0",
-            "damage": "4",
+            "damage": "5",
             "damagedelay": "0",
             "damagetype": "512"
         },
@@ -6496,24 +5391,33 @@
         },
         // stage 3 hellz boss custom attack 7
         {
-			"targetname": "lv3_ex_attack_element_relay",
+			"targetname": "lv3_ex_attack_web_relay",
             "classname": "logic_relay",
-            "startdisabled": "1",
             "io":
 			[
                 {
                     "outputname": "OnTrigger",
-                    "targetname": "ts_ult_eff",
-                    "inputname": "Start",
+                    "targetname": "lv3_ex_attack_element_counter",
+                    "inputname": "Add",
+                    "overrideparam": "1",
                     "delay": 0.0,
                     "timestofire": -1
                 },
 
                 {
                     "outputname": "OnTrigger",
-                    "targetname": "ts_ult_eff",
-                    "inputname": "Stop",
-                    "delay": 1.5,
+                    "targetname": "lv3_ex_attack_sound_volume1",
+                    "inputname": "FireUser1",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+                
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_element_laser7",
+                    "inputname": "Alpha",
+                    "overrideparam": "255",
+                    "delay": 0.0,
                     "timestofire": -1
                 },
 
@@ -6526,20 +5430,1140 @@
                 },
 
                 {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_element_laser7",
+                    "inputname": "Alpha",
+                    "overrideparam": "0",
+                    "delay": 2.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_ball",
+                    "inputname": "Stop",
+                    "delay": 2.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_orient_trigger",
+                    "inputname": "Enable",
+                    "delay": 2.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_element_text7",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "0 0 0",
+                    "delay": 2.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_web_case",
+                    "inputname": "PickRandomShuffle",
+                    "delay": 2.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_web_case",
+                    "inputname": "PickRandomShuffle",
+                    "delay": 3.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_web_case",
+                    "inputname": "PickRandomShuffle",
+                    "delay": 3.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_web_case",
+                    "inputname": "PickRandomShuffle",
+                    "delay": 4.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_web_case",
+                    "inputname": "PickRandomShuffle",
+                    "delay": 4.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_web_case",
+                    "inputname": "PickRandomShuffle",
+                    "delay": 5.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_web_case",
+                    "inputname": "PickRandomShuffle",
+                    "delay": 5.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_web_case",
+                    "inputname": "PickRandomShuffle",
+                    "delay": 6.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_web_case",
+                    "inputname": "PickRandomShuffle",
+                    "delay": 6.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_web_case",
+                    "inputname": "PickRandomShuffle",
+                    "delay": 7.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_web_case",
+                    "inputname": "ResetShuffle",
+                    "delay": 7.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_web_dir_case",
+                    "inputname": "PickRandom",
+                    "delay": 10.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_boss_web_move2*",
+                    "inputname": "Close",
+                    "delay": 18.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_boss_web_move3*",
+                    "inputname": "Close",
+                    "delay": 18.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_case",
+                    "inputname": "PickRandomShuffle",
+                    "delay": 19.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+			"targetname": "lv3_ex_attack_web_dir_case",
+            "classname": "logic_case",
+            "io":
+			[
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "0.2",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "0.4",
+                    "delay": 0.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "0.6",
+                    "delay": 1.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "0.8",
+                    "delay": 1.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "1.0",
+                    "delay": 2.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "0.8",
+                    "delay": 5.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "0.6",
+                    "delay": 5.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "0.4",
+                    "delay": 6.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "0.2",
+                    "delay": 6.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "-0.2",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "-0.4",
+                    "delay": 0.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "-0.6",
+                    "delay": 1.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "-0.8",
+                    "delay": 1.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "-1.0",
+                    "delay": 2.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "-0.8",
+                    "delay": 5.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "-0.6",
+                    "delay": 5.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "-0.4",
+                    "delay": 6.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "lv3_ex_boss_web_rot*",
+                    "inputname": "SetSpeed",
+                    "overrideparam": "-0.2",
+                    "delay": 6.5,
+                    "timestofire": -1
+                }
+            ]
+        },        
+
+        {
+			"targetname": "lv3_ex_attack_web_case",
+            "classname": "logic_case",
+            "io":
+			[
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "lv3_ex_attack_web_maker1",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "lv3_ex_attack_web_maker2",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase03",
+                    "targetname": "lv3_ex_attack_web_maker3",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase04",
+                    "targetname": "lv3_ex_attack_web_maker4",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase05",
+                    "targetname": "lv3_ex_attack_web_maker5",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase06",
+                    "targetname": "lv3_ex_attack_web_maker6",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase07",
+                    "targetname": "lv3_ex_attack_web_maker7",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase08",
+                    "targetname": "lv3_ex_attack_web_maker8",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase09",
+                    "targetname": "lv3_ex_attack_web_maker9",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase10",
+                    "targetname": "lv3_ex_attack_web_maker10",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase11",
+                    "targetname": "lv3_ex_attack_web_maker11",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase12",
+                    "targetname": "lv3_ex_attack_web_maker12",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase13",
+                    "targetname": "lv3_ex_attack_web_maker13",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase14",
+                    "targetname": "lv3_ex_attack_web_maker14",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase15",
+                    "targetname": "lv3_ex_attack_web_maker15",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase16",
+                    "targetname": "lv3_ex_attack_web_maker16",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase17",
+                    "targetname": "lv3_ex_attack_web_maker17",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase18",
+                    "targetname": "lv3_ex_attack_web_maker18",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+        
+        {
+            "targetname": "lv3_ex_attack_web_maker1",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 0 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker2",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 20 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker3",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 40 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker4",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 60 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker5",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 80 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker6",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 100 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker7",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 120 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker8",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 140 0",
+            "scales": "1 1 1",           
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker9",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 160 0",
+            "scales": "1 1 1",           
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker10",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 180 0",
+            "scales": "1 1 1",        
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker11",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 200 0",
+            "scales": "1 1 1",      
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker12",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 220 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker13",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 240 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker14",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 260 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker15",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 280 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker16",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 300 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker17",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 320 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_web_maker18",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2644 1990",
+            "angles": "0 340 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_web_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+        // stage 3 hellz boss custom attack 8
+        {
+			"targetname": "lv3_ex_attack_hell_relay",
+            "classname": "logic_relay",
+            "io":
+			[
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_element_counter",
+                    "inputname": "Add",
+                    "overrideparam": "1",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_sound_volume1",
+                    "inputname": "FireUser1",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+                
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_element_laser8",
+                    "inputname": "Alpha",
+                    "overrideparam": "255",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_ball",
+                    "inputname": "Start",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_element_laser8",
+                    "inputname": "Alpha",
+                    "overrideparam": "0",
+                    "delay": 2.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_ball",
+                    "inputname": "Stop",
+                    "delay": 2.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_orient_trigger",
+                    "inputname": "Enable",
+                    "delay": 2.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_element_text8",
+                    "inputname": "SetTextColor",
+                    "overrideparam": "0 0 0",
+                    "delay": 2.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_hell_case",
+                    "inputname": "PickRandom",
+                    "delay": 2.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_hell_case",
+                    "inputname": "PickRandom",
+                    "delay": 9.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_case",
+                    "inputname": "PickRandomShuffle",
+                    "delay": 17.5,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_hell_case",
+            "classname": "logic_case",
+            "io":
+            [
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "lv3_ex_attack_hell_maker1",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "lv3_ex_attack_hell_maker2",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase03",
+                    "targetname": "lv3_ex_attack_hell_maker3",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnCase04",
+                    "targetname": "lv3_ex_attack_hell_maker4",
+                    "inputname": "ForceSpawn",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+        
+        {
+            "targetname": "lv3_ex_attack_hell_maker1",
+            "classname": "env_entity_maker",
+            "origin": "-5344 3050 1050",
+            "angles": "0 0 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_hell_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_hell_maker2",
+            "classname": "env_entity_maker",
+            "origin": "-5344 2238 1050",
+            "angles": "0 0 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_hell_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_hell_maker3",
+            "classname": "env_entity_maker",
+            "origin": "-5750 2644 1050",
+            "angles": "0 0 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_hell_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_attack_hell_maker4",
+            "classname": "env_entity_maker",
+            "origin": "-4938 2644 1050",
+            "angles": "0 0 0",
+            "scales": "1 1 1",
+            "postspawndirectionvariance": "0.15",
+            "entitytemplate": "lv3_door2_temp",
+            "io":
+            [
+                {
+                    "outputname": "OnEntitySpawned",
+                    "targetname": "lv3_ex_boss_hell_relay*",
+                    "inputname": "Trigger",
+                    "delay": 0.0,
+                    "timestofire": -1
+                }
+            ]
+        },
+
+        {
+			"targetname": "lv3_ex_attack_hell_hurt",
+            "classname": "trigger_hurt",
+			"origin": "-5344 2644 1136",
+			"angles": "0 0 0",
+			"scales": "1 1 1",
+            "filtername": "lv3_ex_attack_hell_multi",
+			"startdisabled": "1",
+            "forgivedelay": "3",
+            "damagemodel": "0",
+	        "spawnflags": "4097",
+	        "damagetype": "0",
+	        "damagecap": "1000",
+	        "damage": "1000",
+            "model": "maps/ze_otakuroom_pt/entities/ts_ult_hurt_1979.vmdl"        
+		},
+
+        {
+            "targetname": "lv3_ex_attack_hell_filter",
+            "classname": "filter_activator_context",
+            "responsecontext": "barrier",
+            "negated": "1"
+        },
+
+        {
+            "targetname": "lv3_ex_attack_hell_multi",
+            "classname": "filter_multi",
+            "filter01": "lv3_ex_attack_hell_filter",
+            "filter02": "human",
+            "filtertype": "0",
+            "negated": "0"
+        },
+        // stage 3 hellz boss custom attack 9
+        {
+			"targetname": "lv3_ex_attack_element_relay",
+            "classname": "logic_relay",
+            "startdisabled": "1",
+            "io":
+			[
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_attack_key_trigger",
+                    "inputname": "FireUser1",
+                    "delay": 5.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "ts_ult_eff",
+                    "inputname": "Start",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
 					"outputname": "OnTrigger",
-					"targetname": "lv3_ex_attack_element_timer",
-					"inputname": "Enable",
+					"targetname": "lv3_ex_attack_element_text*",
+					"inputname": "SetMessage",
+                    "overrideparam": "呪",
 					"delay": 0.0,
 					"timestofire": -1
 				},
 
                 {
 					"outputname": "OnTrigger",
-					"targetname": "lv3_ex_attack_element_box*",
-					"inputname": "FireUser1",
+					"targetname": "lv3_ex_attack_element_ex_text8",
+					"inputname": "SetMessage",
+                    "overrideparam": "呪",
 					"delay": 0.0,
 					"timestofire": -1
 				},
+
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "ts_ult_eff",
+                    "inputname": "Stop",
+                    "delay": 1.5,
+                    "timestofire": -1
+                },
 
                 {
 					"outputname": "OnTrigger",
@@ -6552,26 +6576,198 @@
 
                 {
 					"outputname": "OnTrigger",
-					"targetname": "lv3_ex_attack_element_ex_text*",
-					"inputname": "Enable",
-					"delay": 0.0,
+					"targetname": "ts_hitbox",
+					"inputname": "SetDamageFilter",
+                    "overrideparam": "lv3_ex_attack_filter",
+					"delay": 10.0,
 					"timestofire": -1
 				},
 
                 {
-				  "outputname": "OnTrigger",
-				  "targetname": "lv3_ex_attack_element_counter",
-				  "inputname": "FireUser1",
-				  "delay": 0.1,
-				  "timestofire": -1
+					"outputname": "OnTrigger",
+					"targetname": "lv3_ex_attack_case",
+					"inputname": "ResetShuffle",
+					"delay": 10.0,
+					"timestofire": -1
+				},
+
+                {
+					"outputname": "OnTrigger",
+					"targetname": "lv3_ex_attack_*_relay",
+					"inputname": "Enable",
+					"delay": 10.0,
+					"timestofire": -1
+				},
+
+                {
+					"outputname": "OnTrigger",
+					"targetname": "lv3_ex_attack_element_relay",
+					"inputname": "Disable",
+					"delay": 11.0,
+					"timestofire": -1
+				},
+
+                {
+					"outputname": "OnTrigger",
+					"targetname": "lv3_ex_attack_element_text1",
+					"inputname": "SetMessage",
+                    "overrideparam": "毒",
+					"delay": 10.0,
+					"timestofire": -1
+				},
+
+                {
+					"outputname": "OnTrigger",
+					"targetname": "lv3_ex_attack_element_text2",
+					"inputname": "SetMessage",
+                    "overrideparam": "闇",
+					"delay": 10.0,
+					"timestofire": -1
+				},
+
+                {
+					"outputname": "OnTrigger",
+					"targetname": "lv3_ex_attack_element_text3",
+					"inputname": "SetMessage",
+                    "overrideparam": "召",
+					"delay": 10.0,
+					"timestofire": -1
+				},
+
+                {
+					"outputname": "OnTrigger",
+					"targetname": "lv3_ex_attack_element_text4",
+					"inputname": "SetMessage",
+                    "overrideparam": "閃",
+					"delay": 10.0,
+					"timestofire": -1
+				},
+
+                {
+					"outputname": "OnTrigger",
+					"targetname": "lv3_ex_attack_element_text5",
+					"inputname": "SetMessage",
+                    "overrideparam": "電",
+					"delay": 10.0,
+					"timestofire": -1
+				},
+
+                {
+					"outputname": "OnTrigger",
+					"targetname": "lv3_ex_attack_element_text6",
+					"inputname": "SetMessage",
+                    "overrideparam": "聖",
+					"delay": 10.0,
+					"timestofire": -1
+				},
+
+                {
+					"outputname": "OnTrigger",
+					"targetname": "lv3_ex_attack_element_text7",
+					"inputname": "SetMessage",
+                    "overrideparam": "絲",
+					"delay": 10.0,
+					"timestofire": -1
+				},
+
+                {
+					"outputname": "OnTrigger",
+					"targetname": "lv3_ex_attack_element_text8",
+					"inputname": "SetMessage",
+                    "overrideparam": "天",
+					"delay": 10.0,
+					"timestofire": -1
+				},
+
+                {
+					"outputname": "OnTrigger",
+					"targetname": "lv3_ex_attack_element_counter",
+					"inputname": "SetValue",
+                    "overrideparam": "0",
+					"delay": 10.0,
+					"timestofire": -1
+				},
+
+                {
+					"outputname": "OnTrigger",
+					"targetname": "lv3_ex_attack_element_relay",
+					"inputname": "Disable",
+					"delay": 10.0,
+					"timestofire": -1
+				},
+
+                {
+					"outputname": "OnTrigger",
+					"targetname": "lv3_ex_attack_case",
+					"inputname": "PickRandomShuffle",
+					"delay": 12.0,
+					"timestofire": -1
 				}
+            ]
+        },
+
+        {
+			"targetname": "lv3_ex_attack_key_trigger",
+            "classname": "trigger_multiple",
+			"origin": "-5344 2644 1136",
+			"angles": "0 0 0",
+			"scales": "1 1 1",
+            "startdisabled": "1",
+            "filtername": "human",
+			"wait": "1",
+            "spawnflags": "4097",
+            "model": "maps/ze_otakuroom_pt/entities/ts_ult_hurt_1979.vmdl",
+            "io":
+			[
+                {
+                    "outputname": "OnUser1",
+                    "targetname": "!self",
+                    "inputname": "AddOutPut",
+                    "overrideparam": "OnTrigger>!activator>SetHealth>0>0.0>1",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnUser1",
+                    "targetname": "lv3_ex_icarus_boss",
+                    "inputname": "SetAnimationLooping",
+                    "overrideparam": "apollon1",
+                    "delay": 0.0,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnUser1",
+                    "targetname": "lv3_ex_icarus_boss",
+                    "inputname": "SetAnimationLooping",
+                    "overrideparam": "idle",
+                    "delay": 1.5,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnUser1",
+                    "targetname": "!self",
+                    "inputname": "Enable",
+                    "delay": 0.6,
+                    "timestofire": -1
+                },
+
+                {
+                    "outputname": "OnStartTouch",
+                    "targetname": "!self",
+                    "inputname": "Disable",
+                    "delay": 0.1,
+                    "timestofire": -1
+                }
             ]
         },
 
         {
 			"targetname": "lv3_ex_attack_element_counter",
             "classname": "math_counter",
-			"max": "6",
+			"max": "8",
 			"min": "0",
 			"startvalue":"0",
 			"io":
@@ -6590,120 +6786,8 @@
 					"inputname": "Enable",
 					"delay": 0.1,
 					"timestofire": -1
-				},
-
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "AddOutPut",
-                    "overrideparam": "OnHitMin>lv3_ex_attack_ball>Stop>>0.0>1",
-					"delay": 0.0,
-					"timestofire": -1
-				},
-
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "AddOutPut",
-                    "overrideparam": "OnHitMin>lv3_ex_attack_element_timer>Disable>>0.0>1",
-					"delay": 0.0,
-					"timestofire": -1
-				},
-
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "AddOutPut",
-                    "overrideparam": "OnHitMin>ts_hitbox>SetDamageFilter>lv3_ex_attack_filter>0.0>1",
-					"delay": 0.0,
-					"timestofire": -1
-				},
-
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "AddOutPut",
-                    "overrideparam": "OnHitMin>lv3_ex_attack_case>PickRandomShuffle>>2.0>1",
-					"delay": 0.0,
-					"timestofire": -1
-				},
-
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "AddOutPut",
-                    "overrideparam": "OnHitMin>lv3_ex_attack_case>ResetShuffle>>0.0>1",
-					"delay": 0.0,
-					"timestofire": -1
-				},
-
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "AddOutPut",
-                    "overrideparam": "OnHitMin>lv3_ex_attack_*_relay>Enable>>0.0>1",
-					"delay": 0.0,
-					"timestofire": -1
-				},
-
-                {
-					"outputname": "OnUser1",
-					"targetname": "!self",
-					"inputname": "AddOutPut",
-                    "overrideparam": "OnHitMin>lv3_ex_attack_element_relay>Disable>>0.1>1",
-					"delay": 0.0,
-					"timestofire": -1
 				}
             ]
-        },
-
-        {
-			"targetname": "lv3_ex_attack_element_timer",
-			"classname": "logic_timer",
-			"startdisabled": "1",
-            "refiretime": "0.1",
-            "io":
-			[
-			    {
-					"outputname": "OnTimer",
-					"targetname": "lv3_ex_attack_element_trigger",
-					"inputname": "Enable",
-					"delay": 0.0,
-					"timestofire": -1
-				}
-            ]    
-        },
-
-        {
-			"targetname": "lv3_ex_attack_element_trigger",
-			"classname": "trigger_multiple",
-			"origin": "-5344 2644 1136",
-			"angles": "0 0 0",
-			"scales": "1 1 1",
-            "filtername": "human",
-			"startdisabled": "1",
-            "spawnflags": "4097",
-            "wait": "1",
-            "model": "maps/ze_otakuroom_pt/entities/ts_ult_hurt_1979.vmdl",
-            "io":
-			[
-                {
-                    "outputname": "OnStartTouch",
-                    "targetname": "ts_hp",
-                    "inputname": "Add",
-                    "overrideparam": "2",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-                
-                {
-                    "outputname": "OnStartTouch",
-                    "targetname": "!self",
-                    "inputname": "Disable",
-                    "delay": 0.1,
-                    "timestofire": -1
-                }
-            ]    
         },
         // round finish
 	    {
