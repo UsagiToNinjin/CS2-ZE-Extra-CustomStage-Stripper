@@ -1,4 +1,4 @@
-// stripper by 兎RB 26.10.25
+// stripper by 兎RB 26.10.26
 // map ze_otakuroom_pt
 // workshop id 3128321209
 //⠀⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⢀⢠⡀⠐⠂⠀⠀⠒⠒⠒⠠⠀⠠⠤⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -2389,78 +2389,6 @@
                     "targetname": "ts_hp",
                     "inputname": "AddOutPut",
                     "overrideparam": "OutValue>lv3_ex_attack_hp1>SetIntMessage>>0.0>-1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnTrigger",
-                    "targetname": "ts_hp",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OutValue>lv3_ex_attack_hp2>SetIntMessage>>0.0>-1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnTrigger",
-                    "targetname": "ts_hp",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OutValue>lv3_ex_attack_hp3>SetIntMessage>>0.0>-1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnTrigger",
-                    "targetname": "ts_hp",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OutValue>lv3_ex_attack_hp4>SetIntMessage>>0.0>-1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnTrigger",
-                    "targetname": "ts_hp",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OutValue>lv3_ex_attack_hp5>SetIntMessage>>0.0>-1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnTrigger",
-                    "targetname": "ts_hp",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OutValue>lv3_ex_attack_hp6>SetIntMessage>>0.0>-1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnTrigger",
-                    "targetname": "ts_hp",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OutValue>lv3_ex_attack_hp7>SetIntMessage>>0.0>-1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnTrigger",
-                    "targetname": "ts_hp",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OutValue>lv3_ex_attack_hp8>SetIntMessage>>0.0>-1",
-                    "delay": 0.0,
-                    "timestofire": -1
-                },
-
-                {
-                    "outputname": "OnTrigger",
-                    "targetname": "ts_hp",
-                    "inputname": "AddOutPut",
-                    "overrideparam": "OutValue>lv3_ex_attack_hp9>SetIntMessage>>0.0>-1",
                     "delay": 0.0,
                     "timestofire": -1
                 },
