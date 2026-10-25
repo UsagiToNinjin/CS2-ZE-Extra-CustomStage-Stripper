@@ -1,4 +1,4 @@
-// stripper by 兎RB 26.10.09
+// stripper by 兎RB 26.10.25
 // map ze_otakuroom_pt
 // workshop id 3128321209
 {
@@ -504,6 +504,14 @@
 
                 {
                     "outputname": "OnTrigger",
+                    "targetname": "lv3_ex_boss_dice_push&0000",
+                    "inputname": "PickRandom",
+                    "delay": 0.0,
+                    "timestofire": 1
+                },
+
+                {
+                    "outputname": "OnTrigger",
                     "targetname": "lv3_ex_boss_dice_move&0000",
                     "inputname": "Open",
                     "delay": 0.0,
@@ -608,18 +616,7 @@
 	        "damagetype": "512",
 	        "damagecap": "20",
 	        "damage": "20",
-            "model": "maps/ze_otakuroom_pt/entities/button_lvl1_923.vmdl",
-            "io":
-            [
-                {
-                    "outputname": "OnHurtPlayer",
-                    "targetname": "!activator",
-                    "inputname": "KeyValue",
-                    "overrideparam": "absvelocity 0 -300 300",
-                    "delay": 0.0,
-                    "timestofire": -1
-                }
-            ]           
+            "model": "maps/ze_otakuroom_pt/entities/button_lvl1_923.vmdl"          
         },
 
         {
@@ -723,6 +720,81 @@
 
                 {
                     "outputname": "OnCase06",
+                    "targetname": "!self",
+                    "inputname": "Kill",
+                    "delay": 0.05,
+                    "timestofire": 1
+                }
+            ]
+        },
+
+        {
+            "targetname": "lv3_ex_boss_dice_push&0000",
+            "classname": "logic_case",
+            "io":
+            [
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "lv3_ex_boss_dice_hurt&0000",
+                    "inputname": "AddOutPut",
+                    "overrideparam": "OnHurtPlayer>!activator>KeyValue>absvelocity 0 -400 400>0.0>-1",
+                    "delay": 0.0,
+                    "timestofire": 1
+                },
+
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "!self",
+                    "inputname": "Kill",
+                    "delay": 0.05,
+                    "timestofire": 1
+                },
+
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "lv3_ex_boss_dice_hurt&0000",
+                    "inputname": "AddOutPut",
+                    "overrideparam": "OnHurtPlayer>!activator>KeyValue>absvelocity 0 400 400>0.0>-1",
+                    "delay": 0.0,
+                    "timestofire": 1
+                },
+
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "!self",
+                    "inputname": "Kill",
+                    "delay": 0.05,
+                    "timestofire": 1
+                },
+
+                {
+                    "outputname": "OnCase03",
+                    "targetname": "lv3_ex_boss_dice_hurt&0000",
+                    "inputname": "AddOutPut",
+                    "overrideparam": "OnHurtPlayer>!activator>KeyValue>absvelocity -400 0 400>0.0>-1",
+                    "delay": 0.0,
+                    "timestofire": 1
+                },
+
+                {
+                    "outputname": "OnCase03",
+                    "targetname": "!self",
+                    "inputname": "Kill",
+                    "delay": 0.05,
+                    "timestofire": 1
+                },
+
+                {
+                    "outputname": "OnCase04",
+                    "targetname": "lv3_ex_boss_dice_hurt&0000",
+                    "inputname": "AddOutPut",
+                    "overrideparam": "OnHurtPlayer>!activator>KeyValue>absvelocity 400 0 400>0.0>-1",
+                    "delay": 0.0,
+                    "timestofire": 1
+                },
+
+                {
+                    "outputname": "OnCase04",
                     "targetname": "!self",
                     "inputname": "Kill",
                     "delay": 0.05,
